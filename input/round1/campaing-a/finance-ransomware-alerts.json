@@ -1,0 +1,657 @@
+[
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "a1f2e8d4-9c3b-4a1e-8f7d-1a2b3c4d5e6f",
+    "title": "Credential phishing delivered to finance mailbox",
+    "description": "Google Workspace flagged a message sent to b.smith@corp.local from invoices@acme-payables.co with DMARC fail and a link to hxxps://sharepoint-acme-files[.]com/ReviewInvoice. Message subject: \"Updated ACH instructions - November\".",
+    "severity": 3,
+    "date": 1732698840000,
+    "tags": [
+      "Google Workspace Security",
+      "T1566.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "b.smith@corp.local"
+        ],
+        "message": "Target mailbox",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "acme-payables.co"
+        ],
+        "message": "Spoofed sender domain",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://sharepoint-acme-files.com/ReviewInvoice"
+        ],
+        "message": "Phishing URL",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Email",
+    "source": "Proofpoint TAP",
+    "sourceRef": "b2e3f9d5-1d4c-5b2f-9e8d-2b3c4d5e6f7a",
+    "title": "User click on credential phishing URL",
+    "description": "Proofpoint TAP recorded b.smith clicking the rewritten invoice lure from FIN-LT-204. Browser telemetry shows redirect to a fake Microsoft 365 sign-in page.",
+    "severity": 3,
+    "date": 1732717800000,
+    "tags": [
+      "Proofpoint TAP",
+      "T1204.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Affected user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Endpoint used for click",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://urldefense.proofpoint.com/v2/url?u=sharepoint-acme-files.com"
+        ],
+        "message": "Rewritten click URL",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "c3f4a0e6-2e5d-6c3a-0f9e-3c4d5e6f7a8b",
+    "title": "Risky sign-in flagged for finance user b.smith",
+    "description": "Microsoft Entra ID Protection generated a risky sign-in alert for b.smith from 103.124.92.77 using legacy authentication. Risk level: high. No additional context attached at detection time.",
+    "severity": 3,
+    "date": 1732791600000,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Compromised account",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "103.124.92.77"
+        ],
+        "message": "Risky sign-in IP",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "d4e5b1f7-3f6e-7d4b-1a0f-4d5e6f7a8b9c",
+    "title": "Office application launching suspicious child process",
+    "description": "Microsoft Defender for Endpoint detected WINWORD.EXE on FIN-LT-204 (user b.smith) launching powershell.exe with an encoded command argument. Parent: WINWORD.EXE; child: powershell.exe with -EncodedCommand parameter. Detection rule: AttackSurfaceReduction Block_Office_Apps_Child_Processes.",
+    "severity": 4,
+    "date": 1732962180000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Affected endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Logged-on user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://cdn-sharepoint-acme-files.com/update.dat"
+        ],
+        "message": "Payload URL",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "e5f6c2a8-4a7f-8e5c-2b1a-5e6f7a8b9c0d",
+    "title": "Anomalous outbound connection by PowerShell",
+    "description": "Microsoft Defender for Endpoint observed powershell.exe on FIN-LT-204 establishing repeated outbound TCP connections to 185.225.17.81:443 at ~180 second intervals. Beacon-like behavior flagged by network anomaly engine.",
+    "severity": 4,
+    "date": 1732966500000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1071.001"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Affected endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "185.225.17.81"
+        ],
+        "message": "Command-and-control IP",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Credential Access",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "f6a7d3b9-5b8a-9f6d-3c2b-6f7a8b9c0d1e",
+    "title": "Suspicious access to LSASS by unsigned binary",
+    "description": "Microsoft Defender for Endpoint detected an unsigned binary (C:\\Users\\b.smith\\AppData\\Local\\Temp\\7zS4A1\\update_check.exe) on FIN-LT-204 opening lsass.exe with PROCESS_VM_READ rights. Behavior consistent with credential dumping (T1003.001).",
+    "severity": 4,
+    "date": 1733107860000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1003.001"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Affected endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Users\\b.smith\\AppData\\Local\\Temp\\7zS4A1\\update_check.exe"
+        ],
+        "message": "Unsigned loader path",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "ba46e48e-b60b-5c79-a311-1d0bb2c5241a",
+    "title": "Token impersonation by suspicious process",
+    "description": "Microsoft Defender for Endpoint detected powershell.exe on FIN-LT-204 (user b.smith) calling NtSetInformationToken to impersonate the security context of winlogon.exe (PID 712). Behavior consistent with token theft (Mimikatz-like). MITRE T1134.001.",
+    "severity": 4,
+    "date": 1733284200000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1134.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Subject user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Affected endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "other",
+        "data": [
+          "winlogon.exe (PID 712)"
+        ],
+        "message": "Impersonated process",
+        "tlp": 2,
+        "ioc": false,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "b8c9f5d1-7d0c-1b8f-5e4d-8b9c0d1e2f3a",
+    "title": "SMB authentication chain across finance subnet (FIN-LT-204 \u2192 FS-FIN-01)",
+    "description": "Cisco Secure Firewall detected FIN-LT-204 initiating repeated SMB sessions to FIN-WS-118, FIN-WS-221 and FS-FIN-01 using the same credential. No prior compromise context known to the firewall.",
+    "severity": 4,
+    "date": 1733539860000,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1021.002"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Source workstation",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.42.18.44"
+        ],
+        "message": "SMB source IP",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "c9d0a6e2-8e1d-2c9a-6f5e-9c0d1e2f3a4b",
+    "title": "Suspicious remote service installation via SMB",
+    "description": "Microsoft Defender for Endpoint detected service installation by remote SMB session: PSEXESVC.EXE created on FIN-WS-118 from FIN-LT-204 (10.42.18.44) using credentials of user b.smith. Off-business-hours.",
+    "severity": 4,
+    "date": 1733714220000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1021.002"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Remote host receiving service creation",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Originating host",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "d0e217b5-90da-547e-8225-19def24c34d9",
+    "title": "Scheduled task creation by uncommon process",
+    "description": "Microsoft Defender for Endpoint detected schtasks.exe creating recurring task 'WindowsUpdateCheck' on FIN-WS-118 by user b.smith. Trigger: daily at 03:00 local. Action: %APPDATA%\\Microsoft\\update_check.exe. Persistence pattern flagged. MITRE T1053.005.",
+    "severity": 3,
+    "date": 1733891400000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1053.005"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Subject user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Affected endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "%APPDATA%\\Microsoft\\update_check.exe"
+        ],
+        "message": "Persistence payload path",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "other",
+        "data": [
+          "WindowsUpdateCheck"
+        ],
+        "message": "Task name",
+        "tlp": 2,
+        "ioc": false,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Zscaler Internet Access",
+    "sourceRef": "e1f2c8a4-0a3f-4e1c-8b7a-1e2f3a4b5c6d",
+    "title": "Periodic HTTPS beaconing to recently registered domain",
+    "description": "Zscaler logged FIN-WS-118 reaching hxxps://cdn-helpdesk-portal[.]com/api/v1/checkin every 180 seconds. Domain registered within the last 30 days; uncategorized in the URL filtering database.",
+    "severity": 3,
+    "date": 1734070320000,
+    "tags": [
+      "Zscaler Internet Access",
+      "T1071.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "domain",
+        "data": [
+          "cdn-helpdesk-portal.com"
+        ],
+        "message": "Beaconing domain",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Impacted endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "SIEM",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "a3b4e0c6-2c5b-6a3e-0d9c-3a4b5c6d7e8f",
+    "title": "Volume Shadow Copy deletion attempt via vssadmin.exe",
+    "description": "Microsoft Defender for Endpoint detected vssadmin.exe executing with arguments \"delete shadows /all /quiet\" on FIN-WS-118 by user b.smith. Parent: cmd.exe (PID 6184). Common ransomware precursor.",
+    "severity": 4,
+    "date": 1734420120000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1490"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Correlated user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-LT-204"
+        ],
+        "message": "Initial access host",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Encryption host",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "f2a3d9b5-1b4a-5f2d-9c8b-2f3a4b5c6d7e",
+    "title": "Possible ransomware activity: mass file rename detected",
+    "description": "Microsoft Defender for Endpoint detected high-rate file rename operations on \\\\FS-FIN-01\\Finance\\AP from FIN-WS-118 by user b.smith \u2014 1,847 files renamed within 90 seconds, new extension \".lockbit3\". Behavior matches ransomware encryption pattern.",
+    "severity": 4,
+    "date": 1734497640000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1486"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Host performing renames",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "\\\\FS-FIN-01\\Finance\\AP"
+        ],
+        "message": "Primary impacted share",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Backup",
+    "source": "Rubrik Security Cloud",
+    "sourceRef": "b4c5f1d7-3d6c-7b4f-1e0d-4b5c6d7e8f9a",
+    "title": "Backup tampering against finance file server",
+    "description": "Rubrik Security Cloud recorded failed deletion and retention-change attempts against snapshots for FS-FIN-01 from an account tied to b.smith.",
+    "severity": 4,
+    "date": 1735027500000,
+    "tags": [
+      "Rubrik Security Cloud",
+      "T1490"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FS-FIN-01"
+        ],
+        "message": "Protected asset",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Account seen in API actions",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "c5d6a2e8-4e7d-8c5a-2f1e-5c6d7e8f9a0b",
+    "title": "File creation matches known ransomware note pattern",
+    "description": "Microsoft Defender for Endpoint detected creation of C:\\README_RECOVER_FILES.txt on multiple finance endpoints (FIN-WS-118, FIN-WS-221, FIN-LT-204). File header matches known LockBit 3.0 ransom note signature.",
+    "severity": 4,
+    "date": 1735204260000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1486"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\README_RECOVER_FILES.txt"
+        ],
+        "message": "Ransom note name",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-221"
+        ],
+        "message": "Second impacted workstation",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  }
+]

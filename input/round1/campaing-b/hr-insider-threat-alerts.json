@@ -1,0 +1,597 @@
+[
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "title": "Unusual after-hours sign-in to HR applications",
+    "description": "Microsoft Entra ID Protection generated a medium-risk sign-in for h.potter from a residential ISP in Campinas against Workday and SharePoint Online.",
+    "severity": 3,
+    "date": 1732828680000,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "HR employee account",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "177.52.19.144"
+        ],
+        "message": "Residential source IP",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Cloud",
+    "source": "Microsoft Defender for Cloud Apps",
+    "sourceRef": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "title": "Mass download from HR compensation site",
+    "description": "Defender for Cloud Apps recorded h.potter downloading 186 files from the SharePoint path HR/Compensation/2024 during one session.",
+    "severity": 3,
+    "date": 1732917840000,
+    "tags": [
+      "Microsoft Defender for Cloud Apps",
+      "T1530"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "User performing bulk download",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "https://tenant.sharepoint.com/sites/HR/Compensation/2024"
+        ],
+        "message": "Sensitive SharePoint path",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "title": "Anomalous file compression activity in user profile",
+    "description": "Microsoft Defender for Endpoint detected 7z.exe creating C:\\Users\\h.potter\\Downloads\\Q1_comp_review.7z on HR-LT-118. Source files originated from \\\\FS-HR-02\\Compensation. Compression by non-IT user flagged for review.",
+    "severity": 3,
+    "date": 1733086020000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1560.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Endpoint creating archive",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Users\\h.potter\\Downloads\\Q1_comp_review.7z"
+        ],
+        "message": "Created archive",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "title": "Removable storage device connected to managed endpoint",
+    "description": "Microsoft Defender for Endpoint Device Control reported a Kingston DataTraveler USB device (VID/PID 0951:1666, serial 60A44CXXXXXX) connected to HR-LT-118 by user h.potter. Device class: Removable Storage.",
+    "severity": 3,
+    "date": 1733254560000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1052.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Endpoint with USB activity",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "Logged-on user",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "title": "Outbound TLS upload to dropbox.com from HR endpoint",
+    "description": "Netskope observed h.potter on HR-LT-118 uploading Q1_comp_review.7z to dropbox.com over HTTPS. Application category: cloud storage. No tenant attribution at detection time.",
+    "severity": 4,
+    "date": 1733353740000,
+    "tags": [
+      "Netskope",
+      "T1567.002"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "User tied to upload",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "dropbox.com"
+        ],
+        "message": "Destination cloud app",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "Q1_comp_review.7z"
+        ],
+        "message": "Archive uploaded",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "title": "Large outbound transfer to personal cloud storage",
+    "description": "Cisco Secure Firewall logged 1.2 GB of outbound HTTPS from HR-LT-118 to Dropbox IP space over 26 minutes.",
+    "severity": 3,
+    "date": 1733526840000,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1048"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Source endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "162.125.66.19"
+        ],
+        "message": "Dropbox destination IP",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Purview",
+    "sourceRef": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "title": "Sensitivity-labeled file accessed outside business pattern",
+    "description": "Microsoft Purview Data Loss Prevention recorded user h.potter opening multiple files under \\\\FS-HR-02\\Compensation\\2024\\Salary_Adjustments labeled 'Confidential \u2014 HR Salary 2024'. Access pattern flagged by Insider Risk Management policy.",
+    "severity": 3,
+    "date": 1733663520000,
+    "tags": [
+      "Microsoft Purview",
+      "T1005"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Endpoint accessing files",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "\\\\FS-HR-02\\Compensation\\2024\\Salary_Adjustments"
+        ],
+        "message": "Sensitive network path",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "SIEM",
+    "source": "Microsoft Purview",
+    "sourceRef": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "title": "DLP policy match on outbound file containing HR salary taxonomy",
+    "description": "Microsoft Purview DLP triggered on outbound message from h.potter containing strings matching the HR-Compensation-2024 sensitive information type with confidence 92%.",
+    "severity": 3,
+    "date": 1733854680000,
+    "tags": [
+      "Microsoft Purview",
+      "T1020"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "Correlated identity",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Primary endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Microsoft Purview",
+    "sourceRef": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "title": "Salary workbook sent to personal webmail draft",
+    "description": "Microsoft Purview DLP detected HR_L3_Salary_Adjustments.xlsx attached to a draft addressed to harry.personal@proton.me in Outlook Web.",
+    "severity": 4,
+    "date": 1734115920000,
+    "tags": [
+      "Microsoft Purview",
+      "T1048.003"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "harry.personal@proton.me"
+        ],
+        "message": "Personal destination mailbox",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "HR_L3_Salary_Adjustments.xlsx"
+        ],
+        "message": "Sensitive attachment",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Cloud",
+    "source": "Microsoft Defender for Cloud Apps",
+    "sourceRef": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "title": "Repeated download of compensation exports",
+    "description": "Defender for Cloud Apps observed h.potter exporting another batch of compensation reports from the SharePoint HR site.",
+    "severity": 3,
+    "date": 1734298020000,
+    "tags": [
+      "Microsoft Defender for Cloud Apps",
+      "T1530"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "User account",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "https://tenant.sharepoint.com/sites/HR/Compensation/2024/Q2_Planning"
+        ],
+        "message": "Downloaded site path",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Zscaler Internet Access",
+    "sourceRef": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "title": "Connection to personal cloud storage upload endpoint",
+    "description": "Zscaler logged HR-LT-118 sending multipart HTTPS POST requests to content.dropboxapi.com and api.dropboxapi.com.",
+    "severity": 3,
+    "date": 1734474780000,
+    "tags": [
+      "Zscaler Internet Access",
+      "T1567.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Source endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "content.dropboxapi.com"
+        ],
+        "message": "Upload endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "title": "Password-protected multi-volume archive created",
+    "description": "Microsoft Defender for Endpoint detected 7z.exe on HR-LT-118 creating multi-volume archive comp_apr_2024.7z.001..005 with password protection enabled, by user h.potter. Output path: C:\\Users\\h.potter\\Desktop\\Personal\\.",
+    "severity": 4,
+    "date": 1734725100000,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1560.001"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Host performing archive split",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Users\\h.potter\\Desktop\\Personal\\comp_apr_2024.7z.001"
+        ],
+        "message": "First archive volume",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Purview",
+    "sourceRef": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "title": "High-volume data transfer to removable storage",
+    "description": "Microsoft Purview Endpoint DLP detected 612 MB written to removable storage device (Kingston DataTraveler) on HR-LT-118 by user h.potter within a 4-minute window. 7 files matched DLP rule 'HR-Compensation-2024'.",
+    "severity": 3,
+    "date": 1734896580000,
+    "tags": [
+      "Microsoft Purview",
+      "T1052.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Endpoint writing to USB",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "Associated employee",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "title": "Outbound multi-part TLS to content.dropboxapi.com",
+    "description": "Netskope captured h.potter on HR-LT-118 transferring comp_apr_2024.7z.001 to content.dropboxapi.com. Transfer type: multi-part upload. Application category: cloud storage.",
+    "severity": 4,
+    "date": 1735081020000,
+    "tags": [
+      "Netskope",
+      "T1567.002"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "User performing upload",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "comp_apr_2024.7z.001"
+        ],
+        "message": "Archive volume uploaded",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  },
+  {
+    "type": "SIEM",
+    "source": "Microsoft Purview",
+    "sourceRef": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "title": "Microsoft Purview DLP \u2014 high-confidence salary keyword match in outbound message",
+    "description": "Microsoft Purview triggered a DLP rule on outbound message from h.potter to harry.personal@proton.me. Match confidence: 96%. Sensitive types matched: HR-Salary-Numeric, Brazilian-CPF (3 hits).",
+    "severity": 4,
+    "date": 1735203720000,
+    "tags": [
+      "Microsoft Purview",
+      "T1020"
+    ],
+    "tlp": 3,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "h.potter"
+        ],
+        "message": "Correlated subject",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Primary endpoint",
+        "tlp": 2,
+        "ioc": true,
+        "sighted": false
+      }
+    ]
+  }
+]
