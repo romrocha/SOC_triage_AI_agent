@@ -1,0 +1,17 @@
+{
+  "schema": "Same as input/round1 and round2 (TheHive-style alert JSON)",
+  "scenario": "Same campaigns and noise as round 1/2 but stretched across 6 months to measure temporal dilation effect on agent correlation.",
+  "derived_from": "round2 with extended timeline",
+  "anchor_utc": "2024-07-01",
+  "window_months": 6,
+  "window_end_utc": "2024-12-31",
+  "timeline": "All 100 alerts are distributed across Jul-Dec 2024 with noise, finance-ransomware activity, and HR insider-exfil activity intentionally mixed in time.",
+  "source_convention": "source uses real product names, such as Cortex XDR, Google Workspace Security, Netskope, and CrowdStrike Falcon.",
+  "tag_convention": "tags contains exactly one value: the same product name used in source.",
+  "source_ref_policy": "Deterministic UUIDs generated from round3 namespace for stability across regenerations.",
+  "files": {
+    "campaing-a/finance-ransomware-alerts.json": 15,
+    "campaing-b/hr-insider-threat-alerts.json": 15,
+    "noise/noise-alerts.json": 70
+  }
+}

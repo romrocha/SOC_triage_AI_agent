@@ -1,0 +1,2505 @@
+[
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "n7c8d9e0-f1a2-b3c4-d5e6-f7a8b9c0d1e2",
+    "title": "Inbound email with suspicious sender domain",
+    "description": "Google Workspace flagged an inbound message targeting helpdesk@corp.local from domain secure-signature.org. DMARC validation failed and the message body contained a URL with brand impersonation characteristics.",
+    "severity": 2,
+    "date": 1732693511967,
+    "tags": [
+      "Google Workspace Security",
+      "T1566"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "helpdesk@corp.local"
+        ],
+        "message": "Recipient mailbox",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "secure-signature.org"
+        ],
+        "message": "Sender domain",
+        "tlp": 2
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://secure-signature.org/sign/pending"
+        ],
+        "message": "Embedded URL",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d7",
+    "title": "Sign-in from unrecognized geographic location",
+    "description": "Okta detected a sign-in for l.melo from 179.21.43.17. The source IP geolocated to a different state than the user's baseline. Authentication completed using MFA from a device registered in Intune.",
+    "severity": 3,
+    "date": 1732935232246,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "l.melo"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "VPN-GW-02"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Backup",
+    "source": "Veeam Backup & Replication",
+    "sourceRef": "n8f9a0b1-c2d3-e4f5-a6b7-c8d9e0f1a2b3",
+    "title": "High-volume outbound data transfer detected",
+    "description": "Veeam Backup & Replication reported a large data transfer from FS-FIN-01 to 172.18.40.21. Transfer volume exceeded the short-term rolling average. The job ran during the configured replication window.",
+    "severity": 1,
+    "date": 1732955147752,
+    "tags": [
+      "Veeam Backup & Replication"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FS-FIN-01"
+        ],
+        "message": "Backup source",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "172.18.40.21"
+        ],
+        "message": "Repository destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n3a4b5c6-d7e8-f9a0-b1c2-d3e4f5a6b7c8",
+    "title": "PowerShell command line with bypass execution policy",
+    "description": "Microsoft Defender for Endpoint flagged powershell.exe on IT-WS-042 invoked with -ExecutionPolicy Bypass parameter by user j.almeida via interactive session. Frequent in admin tooling; flagged for review.",
+    "severity": 2,
+    "date": 1732997731541,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-WS-019"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_patch"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Windows\\SCCM\\Scripts\\deploy.ps1"
+        ],
+        "message": "Script path",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n2f3a4b5-c6d7-e8f9-a0b1-c2d3e4f5a6b7",
+    "title": "PowerShell with encoded command argument",
+    "description": "Microsoft Defender for Endpoint detected powershell.exe on DEV-WS-019 launched by user a.ferreira with -EncodedCommand (decoded length 412 bytes). Decoded body did not match known malicious patterns.",
+    "severity": 3,
+    "date": 1733023656700,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1027"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-042"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_sccm"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n1e2f3a4-b5c6-d7e8-f9a0-b1c2d3e4f5a7",
+    "title": "Impossible travel sign-in anomaly detected",
+    "description": "Microsoft Entra ID Protection flagged n.teixeira for impossible travel. A session shift was observed between IPs in different geographic regions, including 45.182.21.13. The sign-in used cached tokens via a GlobalProtect VPN tunnel.",
+    "severity": 4,
+    "date": 1733176008365,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "n.teixeira"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.13"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Darktrace",
+    "sourceRef": "n2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f8",
+    "title": "Anomalous outbound data transfer volume",
+    "description": "Darktrace flagged elevated outbound traffic from DR-SYNC-01 to 10.90.2.41. The transfer volume exceeded the 30-day baseline by 340 percent. The destination IP belongs to the disaster recovery subnet.",
+    "severity": 2,
+    "date": 1733207006162,
+    "tags": [
+      "Darktrace",
+      "T1048"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DR-SYNC-01"
+        ],
+        "message": "Transferring host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.90.2.41"
+        ],
+        "message": "DR replication target",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Backup",
+    "source": "Veeam Backup & Replication",
+    "sourceRef": "26385fa8-46b2-554c-a4e4-5f3e180fe1e5",
+    "title": "Backup job completed with warnings (Tier-2-Apps)",
+    "description": "Veeam Backup & Replication finished the Tier-2-Apps backup job with 2 warnings: snapshot consolidation took longer than expected on VM-APP-DB-04 (32 minutes) and VM-APP-WEB-09 (28 minutes). Data protection SLA preserved.",
+    "severity": 2,
+    "date": 1733516870587,
+    "tags": [
+      "Veeam Backup & Replication",
+      "T1490"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "VM-APP-DB-04"
+        ],
+        "message": "VM with delayed snapshot",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b3",
+    "title": "wscript.exe spawning powershell.exe at user logon",
+    "description": "Microsoft Defender for Endpoint detected wscript.exe on BR-WS-011 (user n.teixeira) executing logon.ps1 via cscript wrapper at user logon time. GPO logon script context.",
+    "severity": 3,
+    "date": 1733540992455,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.005"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-011"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "logon.ps1"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Qualys VMDR",
+    "sourceRef": "3cb970a5-0dcc-5862-ac85-cff8838f382f",
+    "title": "TLS certificate expiring in 14 days for internal application",
+    "description": "Qualys VMDR detected an upcoming expiration for the TLS certificate presented by app.corp.local (CN=app.corp.local). Expiration date: 2024-12-11. Owner: Application Platform team.",
+    "severity": 2,
+    "date": 1733637587708,
+    "tags": [
+      "Qualys VMDR",
+      "T1556"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "app.corp.local"
+        ],
+        "message": "Internal application FQDN",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Jamf Protect",
+    "sourceRef": "n5a6b7c8-d9e0-f1a2-b3c4-d5e6f7a8b9c1",
+    "title": "Unsigned binary execution on macOS endpoint",
+    "description": "Jamf Protect detected an unsigned helper binary running on MAC-FIN-14 under user u.campos. The binary was launched from /usr/local/bin/ and made network connections to an internal distribution server.",
+    "severity": 3,
+    "date": 1733650537854,
+    "tags": [
+      "Jamf Protect",
+      "T1204.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "MAC-FIN-14"
+        ],
+        "message": "Affected Mac",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "u.campos"
+        ],
+        "message": "Logged-on user",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "/usr/local/bin/helper_agent"
+        ],
+        "message": "Unsigned binary path",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Qualys VMDR",
+    "sourceRef": "n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e4",
+    "title": "Service enumeration and port scanning on production host",
+    "description": "Qualys VMDR recorded scan activity from 10.10.5.20 targeting APP-SRV-12. Multiple TCP ports were probed including 445, 3389, and 5985. The source IP belongs to the vulnerability management VLAN.",
+    "severity": 1,
+    "date": 1733743857879,
+    "tags": [
+      "Qualys VMDR",
+      "T1046"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "APP-SRV-12"
+        ],
+        "message": "Scanned host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.10.5.20"
+        ],
+        "message": "Scanner source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a1",
+    "title": "File upload to cloud storage platform detected",
+    "description": "Netskope identified r.nunes uploading files to onedrive.corp.local. The upload session involved multiple file transfers over HTTPS to a cloud storage endpoint.",
+    "severity": 2,
+    "date": 1733819682969,
+    "tags": [
+      "Netskope",
+      "T1567.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "r.nunes"
+        ],
+        "message": "Uploading user",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "onedrive.corp.local"
+        ],
+        "message": "Cloud storage destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n4b5c6d7-e8f9-a0b1-c2d3-e4f5a6b7c8d9",
+    "title": "PowerShell launching from non-standard directory",
+    "description": "Microsoft Defender for Endpoint observed powershell.exe executing from C:\\Users\\Public\\Tools\\ on OPS-WS-007. Process invoked by scheduled task 'NightlyMaintenance' (user system).",
+    "severity": 3,
+    "date": 1733832079753,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "ENG-LT-223"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_tanium"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c3",
+    "title": "File upload to cloud storage platform detected",
+    "description": "Netskope identified g.oliveira uploading files to tenant-my.sharepoint.com. The upload session involved multiple file transfers over HTTPS to a cloud storage endpoint.",
+    "severity": 3,
+    "date": 1733871528216,
+    "tags": [
+      "Netskope",
+      "T1567.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "g.oliveira"
+        ],
+        "message": "Uploading user",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "tenant-my.sharepoint.com"
+        ],
+        "message": "Cloud storage destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Rapid7 InsightVM",
+    "sourceRef": "n7c8d9e0-f1a2-b3c4-d5e6-f7a8b9c0d1e3",
+    "title": "RDP and WinRM connection probing detected",
+    "description": "Rapid7 InsightVM logged RDP and WinRM connection attempts from 10.10.8.31 toward DC-01. The probing targeted standard management ports 3389 and 5985.",
+    "severity": 2,
+    "date": 1733927480253,
+    "tags": [
+      "Rapid7 InsightVM",
+      "T1021.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DC-01"
+        ],
+        "message": "Probed host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.10.8.31"
+        ],
+        "message": "Probing source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f0",
+    "title": "Upload to unsanctioned cloud application",
+    "description": "Netskope CASB blocked file upload by user m.castro to mega.nz (unsanctioned cloud storage category). File: 'project-backup.zip' (24 MB). Policy: 'Block-Personal-Cloud-Tier-2'.",
+    "severity": 3,
+    "date": 1733943264789,
+    "tags": [
+      "Netskope",
+      "T1567.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "m.castro"
+        ],
+        "message": "Uploading user",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "tenant-my.sharepoint.com"
+        ],
+        "message": "Cloud storage destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c2",
+    "title": "Sign-in from unrecognized geographic location",
+    "description": "Okta detected a sign-in for l.melo from 179.26.58.52. The source IP geolocated to a different state than the user's baseline. Authentication completed using MFA from a device registered in Intune.",
+    "severity": 3,
+    "date": 1733946984790,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "l.melo"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "VPN-GW-02"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c6",
+    "title": "Sign-in from unrecognized geographic location",
+    "description": "Okta detected a sign-in for a.ferreira from 179.20.40.10. The source IP geolocated to a different state than the user's baseline. Authentication completed using MFA from a device registered in Intune.",
+    "severity": 2,
+    "date": 1734062359556,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "a.ferreira"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "VPN-GW-01"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n4b5c6d7-e8f9-a0b1-c2d3-e4f5a6b7c8d0",
+    "title": "Impossible travel sign-in anomaly detected",
+    "description": "Microsoft Entra ID Protection flagged d.araujo for impossible travel. A session shift was observed between IPs in different geographic regions, including 45.182.21.11. The sign-in used cached tokens via a GlobalProtect VPN tunnel.",
+    "severity": 2,
+    "date": 1734238571597,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "d.araujo"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.11"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b1",
+    "title": "Sign-in blocked by adaptive access policy",
+    "description": "Okta blocked a sign-in attempt for a.ferreira from (ip); adaptive policy denied due to unmanaged device posture. User received guidance to enroll device in MDM.",
+    "severity": 2,
+    "date": 1734430670405,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "a.ferreira"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "VPN-GW-01"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d8",
+    "title": "Remote service creation matching PsExec pattern",
+    "description": "Microsoft Defender for Endpoint observed service installation PSEXESVC.EXE on APP-SRV-12 from source 10.42.7.18 by user svc_admin. Routine remote ops by IT admins; correlate with change ticket.",
+    "severity": 3,
+    "date": 1734638827491,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1021.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-ADM-04"
+        ],
+        "message": "Admin workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "ENG-LT-014"
+        ],
+        "message": "Target endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "n8d9e0f1-a2b3-c4d5-e6f7-a8b9c0d1e2f3",
+    "title": "Inbound email with suspicious sender domain",
+    "description": "Google Workspace flagged an inbound message targeting legal@corp.local from domain vendor-update.info. DMARC validation failed and the message body contained a URL with brand impersonation characteristics.",
+    "severity": 3,
+    "date": 1734693405348,
+    "tags": [
+      "Google Workspace Security",
+      "T1566"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "legal@corp.local"
+        ],
+        "message": "Recipient mailbox",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "vendor-update.info"
+        ],
+        "message": "Sender domain",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d9",
+    "title": "Logon script executing encoded PowerShell",
+    "description": "Microsoft Defender for Endpoint flagged BR-WS-012 logon script vpn_bootstrap.ps1 executing with -EncodedCommand argument under user p.freitas at user logon. Origin: SYSVOL distribution.",
+    "severity": 2,
+    "date": 1734732509735,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-012"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "printer_map.vbs"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Windows\\Temp\\print_config.dat"
+        ],
+        "message": "Dropped temp file",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "c47d985d-51f7-5e17-9da8-1d7178b7f6fe",
+    "title": "Inbound connection blocked by sanctioned-country geo-rule",
+    "description": "Cisco Secure Firewall blocked an inbound TCP/443 connection from 203.0.113.42 (geolocated to a sanctioned country) targeting the external load balancer. Action: drop. Threat score: low.",
+    "severity": 3,
+    "date": 1735119462007,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1133"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "203.0.113.42"
+        ],
+        "message": "Source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "n0b1c2d3-e4f5-a6b7-c8d9-e0f1a2b3c4d5",
+    "title": "Internal network port scanning from corporate subnet",
+    "description": "Cisco Secure Firewall logged Nessus-SCAN-01 probing multiple internal ports from source IP 10.60.10.15. The scan targeted management interfaces across three VLANs. The source system is registered in the vulnerability management VLAN.",
+    "severity": 2,
+    "date": 1735204976331,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1046"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "10.60.10.15"
+        ],
+        "message": "Scanner source",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "Nessus-SCAN-01"
+        ],
+        "message": "Scanner appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f1",
+    "title": "VBScript spawning cmd.exe from logon GPO",
+    "description": "Microsoft Defender for Endpoint detected drives.vbs on BR-WS-013 spawning cmd.exe at logon under user d.araujo. Logon script registered via Group Policy 'Branch-Drives-Map'.",
+    "severity": 3,
+    "date": 1735344291746,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.005"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-014"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "drives.vbs"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d5",
+    "title": "WMI process creation on remote host",
+    "description": "Microsoft Defender for Endpoint detected wmiprvse.exe spawning powershell.exe on DB-SQL-04 invoked from 10.40.5.22 (user svc_dba). Remote PowerShell execution via WMI.",
+    "severity": 3,
+    "date": 1735420113132,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1047"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-ADM-02"
+        ],
+        "message": "Admin workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-118"
+        ],
+        "message": "Target endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e0",
+    "title": "PowerShell process started with hidden window",
+    "description": "Microsoft Defender for Endpoint detected powershell.exe on FIN-WS-203 launched with -WindowStyle Hidden by user m.lima. Common in admin scripts; correlated with no follow-up suspicious activity.",
+    "severity": 4,
+    "date": 1735463519050,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "OPS-WS-301"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_itops"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "n3e4f5a6-b7c8-d9e0-f1a2-b3c4d5e6f7a8",
+    "title": "Internal network port scanning from corporate subnet",
+    "description": "Cisco Secure Firewall logged Rapid7-SCAN-02 probing multiple internal ports from source IP 10.60.10.18. The scan targeted management interfaces across three VLANs. The source system is registered in the vulnerability management VLAN.",
+    "severity": 3,
+    "date": 1735487057056,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1046"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "10.60.10.18"
+        ],
+        "message": "Scanner source",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "Rapid7-SCAN-02"
+        ],
+        "message": "Scanner appliance",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.42.3.80"
+        ],
+        "message": "Probed destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a0",
+    "title": "Repeated MFA push prompts within short window",
+    "description": "Okta detected 12 MFA push notifications sent to user j.gomes within 4 minutes from IP 187.45.10.33. Possible MFA fatigue attempt or user device issue; sign-in not completed.",
+    "severity": 3,
+    "date": 1735523227959,
+    "tags": [
+      "Okta",
+      "T1621"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "j.gomes"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "VPN-GW-03"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "187.45.10.33"
+        ],
+        "message": "Source IP address",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Darktrace",
+    "sourceRef": "n3e4f5a6-b7c8-d9e0-f1a2-b3c4d5e6f7a9",
+    "title": "Deviation from peer group baseline traffic profile",
+    "description": "Darktrace flagged host ENG-WS-203 (user a.lima) as deviating from engineering peer group baseline: 4.2x normal outbound volume to GitHub (legitimate code push session, but flagged for review).",
+    "severity": 1,
+    "date": 1735584435354,
+    "tags": [
+      "Darktrace",
+      "T1567"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DR-SYNC-02"
+        ],
+        "message": "Transferring host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.90.2.42"
+        ],
+        "message": "DR replication target",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n6d7e8f9-a0b1-c2d3-e4f5-a6b7c8d9e0f1",
+    "title": "PowerShell with download cradle pattern",
+    "description": "Microsoft Defender for Endpoint flagged powershell.exe on MKT-WS-088 invoking IEX (New-Object Net.WebClient).DownloadString to internal repo at https://artifacts.corp.local/installer.ps1 by user d.azevedo.",
+    "severity": 2,
+    "date": 1735646623276,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1105"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "MKT-LT-114"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_softdist"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\ProgramData\\Tanium\\stage.ps1"
+        ],
+        "message": "Script path",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Jamf Protect",
+    "sourceRef": "n6b7c8d9-e0f1-a2b3-c4d5-e6f7a8b9c0d2",
+    "title": "Notarization check failure on executed binary",
+    "description": "Jamf Protect detected execution of binary /usr/local/bin/dev_helper on MAC-DEV-08 by user r.tavares. Binary failed Apple notarization check (Gatekeeper assessment: source not trusted). Allowed by user override.",
+    "severity": 2,
+    "date": 1735648320624,
+    "tags": [
+      "Jamf Protect",
+      "T1553.005"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "MAC-DES-03"
+        ],
+        "message": "Affected Mac",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "l.azevedo"
+        ],
+        "message": "Logged-on user",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f9",
+    "title": "Privileged action by service principal",
+    "description": "Okta logged an administrative action (App assignment update) performed by service principal okta-terraform-runner on application 'Salesforce'. Action initiated from CI/CD pipeline IP 10.10.5.42.",
+    "severity": 3,
+    "date": 1735806329004,
+    "tags": [
+      "Okta",
+      "T1098"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "okta-terraform-runner"
+        ],
+        "message": "Service principal",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n0d1e2f3-a4b5-c6d7-e8f9-a0b1c2d3e4f6",
+    "title": "Impossible travel sign-in anomaly detected",
+    "description": "Microsoft Entra ID Protection flagged k.barbosa for impossible travel. A session shift was observed between IPs in different geographic regions, including 45.182.21.12. The sign-in used cached tokens via a GlobalProtect VPN tunnel.",
+    "severity": 3,
+    "date": 1736062634694,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "k.barbosa"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.12"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a2",
+    "title": "Suspicious sequence of script hosts at logon",
+    "description": "Microsoft Defender for Endpoint observed wscript.exe → cscript.exe → powershell.exe chain on BR-WS-014 by user k.barbosa during logon initialization. Multi-host pattern, no malicious indicators.",
+    "severity": 2,
+    "date": 1736094716380,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-015"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "teams_cleanup.ps1"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "C:\\Windows\\Temp\\teams_cache.dat"
+        ],
+        "message": "Dropped temp file",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e8",
+    "title": "Self-service password reset request rate-limited",
+    "description": "Okta SSPR system rate-limited password reset attempts for user c.ramos after 5 attempts within 10 minutes. Sign-in flow paused.",
+    "severity": 2,
+    "date": 1736199848866,
+    "tags": [
+      "Okta",
+      "T1556"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "c.ramos"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "SSO-EDGE-01"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "179.23.55.80"
+        ],
+        "message": "Source IP address",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c7",
+    "title": "PowerShell remoting (WinRM) inbound execution",
+    "description": "Microsoft Defender for Endpoint observed wsmprovhost.exe on ENG-SRV-04 hosting an inbound PowerShell remoting session from 10.40.5.20 (user svc_deploy). Build/deploy automation pattern.",
+    "severity": 2,
+    "date": 1736236958542,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1021.006"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-ADM-03"
+        ],
+        "message": "Admin workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "OPS-WS-010"
+        ],
+        "message": "Target endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Rapid7 InsightVM",
+    "sourceRef": "n9e0f1a2-b3c4-d5e6-f7a8-b9c0d1e2f3a5",
+    "title": "Container image vulnerability detected",
+    "description": "Rapid7 InsightVM scan of container image 'corp-registry/api-gateway:v3.4.1' identified CVE-2024-21626 (runc escape, CVSS 8.6) in base layer. Image deployed across 14 production pods.",
+    "severity": 2,
+    "date": 1736238293840,
+    "tags": [
+      "Rapid7 InsightVM",
+      "T1190"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "APP-CRM-01"
+        ],
+        "message": "Probed host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.10.8.33"
+        ],
+        "message": "Probing source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "n6b7c8d9-e0f1-a2b3-c4d5-e6f7a8b9c0d1",
+    "title": "Email failed DMARC and SPF authentication",
+    "description": "Google Workspace Security blocked inbound email from {domain} addressed to multiple recipients. DMARC: fail (p=reject); SPF: softfail. Subject: 'Updated invoice'. Quarantined.",
+    "severity": 2,
+    "date": 1736241128627,
+    "tags": [
+      "Google Workspace Security",
+      "T1566.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "hr@corp.local"
+        ],
+        "message": "Recipient mailbox",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "shipment-alerts.com"
+        ],
+        "message": "Sender domain",
+        "tlp": 2
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://shipment-alerts.com/track/ref-119"
+        ],
+        "message": "Embedded URL",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Darktrace",
+    "sourceRef": "n4f5a6b7-c8d9-e0f1-a2b3-c4d5e6f7a8b0",
+    "title": "First-seen external destination for managed device",
+    "description": "Darktrace identified host MKT-WS-088 establishing connection to never-before-seen external destination (cdn.adfreshtech.io). Investigation: marketing automation platform recently onboarded; expected.",
+    "severity": 2,
+    "date": 1736387336726,
+    "tags": [
+      "Darktrace",
+      "T1071.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DR-SYNC-03"
+        ],
+        "message": "Transferring host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.90.2.43"
+        ],
+        "message": "DR replication target",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Backup",
+    "source": "Veeam Backup & Replication",
+    "sourceRef": "n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e6",
+    "title": "High-volume outbound data transfer detected",
+    "description": "Veeam Backup & Replication reported a large incremental backup from FS-FIN-01 to 172.18.40.21. Transfer volume exceeded the rolling average by 180 percent.",
+    "severity": 1,
+    "date": 1736436828766,
+    "tags": [
+      "Veeam Backup & Replication"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FS-FIN-01"
+        ],
+        "message": "Backup source",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "172.18.40.21"
+        ],
+        "message": "Repository destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e9",
+    "title": "Risky OAuth grant detected for user account",
+    "description": "Netskope detected user s.souza granted OAuth permissions to third-party app 'EmailScannerPro' (publisher unverified) on Microsoft 365 account. Scopes requested: Mail.Read, Files.Read.All. Risk score: high.",
+    "severity": 2,
+    "date": 1737003736628,
+    "tags": [
+      "Netskope",
+      "T1098.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "s.souza"
+        ],
+        "message": "Uploading user",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "box.corp.local"
+        ],
+        "message": "Cloud storage destination",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "Q3_forecast.xlsx"
+        ],
+        "message": "Uploaded file",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n0f1a2b3-c4d5-e6f7-a8b9-c0d1e2f3a4b5",
+    "title": "DCOM-based lateral movement (MMC20.Application)",
+    "description": "Microsoft Defender for Endpoint detected mmc.exe spawning cmd.exe on OPS-SRV-09 via DCOM activation from 10.40.5.18. MMC20.Application object instantiated remotely by user svc_monitor.",
+    "severity": 3,
+    "date": 1737051474437,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1021.003"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-ADM-02"
+        ],
+        "message": "Admin workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "HR-LT-052"
+        ],
+        "message": "Target endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e5",
+    "title": "Sign-in from anonymous IP address (Tor)",
+    "description": "Microsoft Entra ID Protection flagged sign-in for user d.araujo originating from anonymized IP 45.182.21.11 (Tor exit node). Risk level: medium. User MFA challenge completed successfully.",
+    "severity": 2,
+    "date": 1737099855104,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "d.araujo"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.11"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n0c1d2e3-f4a5-b6c7-d8e9-f0a1b2c3d4e7",
+    "title": "Risk-based step-up authentication required",
+    "description": "Okta evaluated sign-in for user b.smith from IP 179.20.88.15 as medium risk (new device + new location). Step-up authentication challenge issued; user completed second factor.",
+    "severity": 2,
+    "date": 1737247600433,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "b.smith"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "179.20.88.15"
+        ],
+        "message": "Source IP address",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d4",
+    "title": "Token replay detected",
+    "description": "Microsoft Entra ID Protection detected reuse of refresh token for user p.freitas from two distinct IPs (200.150.30.5 and previously-seen 10.40.1.12) within 90 seconds. Possible session hijack or load-balancer artifact.",
+    "severity": 3,
+    "date": 1737296026435,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1550.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "p.freitas"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.10"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "200.150.30.5"
+        ],
+        "message": "Previous session IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "c372a57c-0169-5247-9ca9-b6d5b74b3350",
+    "title": "Bulk OAuth token revocation for SaaS application",
+    "description": "Okta administrator revoked active OAuth refresh tokens for the Salesforce application (28 sessions invalidated). Action initiated from Okta admin console by user iam-admin@corp.local.",
+    "severity": 3,
+    "date": 1737330702552,
+    "tags": [
+      "Okta",
+      "T1098"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "iam-admin"
+        ],
+        "message": "Administrator account",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c8",
+    "title": "Logon script writing to startup folder",
+    "description": "Microsoft Defender for Endpoint detected printer_map.vbs on BR-WS-015 (user v.cardoso) writing to %APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup at logon. Persistence-like pattern flagged.",
+    "severity": 3,
+    "date": 1737372449359,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1547.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-011"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "logon.ps1"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e0",
+    "title": "wscript.exe with encoded JScript at logon",
+    "description": "Microsoft Defender for Endpoint flagged wscript.exe on BR-WS-011 executing teams_cleanup.ps1 wrapper containing encoded JScript payload at logon under n.teixeira.",
+    "severity": 4,
+    "date": 1737442291145,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.007"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "BR-WS-013"
+        ],
+        "message": "Affected workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "vpn_bootstrap.ps1"
+        ],
+        "message": "Logon script",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e1",
+    "title": "Unfamiliar sign-in properties",
+    "description": "Microsoft Entra ID Protection flagged sign-in for user k.barbosa from IP 45.182.21.12 as unfamiliar (new device + new location + new ISP). Risk level: low. User identity verified via MFA.",
+    "severity": 3,
+    "date": 1737551365830,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "k.barbosa"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.12"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "DLP",
+    "source": "Netskope",
+    "sourceRef": "n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b2",
+    "title": "Personal account use blocked by SaaS policy",
+    "description": "Netskope blocked sign-in attempt by user f.lima to Dropbox using personal email (bsmith.personal@gmail.com) from corporate device. Tenant restriction policy enforced.",
+    "severity": 1,
+    "date": 1737569553952,
+    "tags": [
+      "Netskope",
+      "T1078.004"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "f.lima"
+        ],
+        "message": "Uploading user",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "box.corp.local"
+        ],
+        "message": "Cloud storage destination",
+        "tlp": 2
+      },
+      {
+        "dataType": "file",
+        "data": [
+          "project_plan.docx"
+        ],
+        "message": "Uploaded file",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Rapid7 InsightVM",
+    "sourceRef": "n8d9e0f1-a2b3-c4d5-e6f7-a8b9c0d1e2f4",
+    "title": "Asset out-of-scope: unmanaged host discovered",
+    "description": "Rapid7 InsightVM discovery scan identified host 10.42.50.137 (hostname: dev-jenkins-old) responding to SNMP queries. Host not in managed asset inventory; possible shadow IT.",
+    "severity": 1,
+    "date": 1737572151370,
+    "tags": [
+      "Rapid7 InsightVM",
+      "T1133"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DC-02"
+        ],
+        "message": "Probed host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.10.8.32"
+        ],
+        "message": "Probing source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "n2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f7",
+    "title": "Anomalous east-west traffic pattern detected",
+    "description": "Cisco Secure Firewall flagged unusual lateral connection volume from 10.42.18.51 to 23 distinct internal hosts on TCP/445 within 6 minutes. Behavior deviates from baseline for source segment.",
+    "severity": 2,
+    "date": 1738086533065,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1046"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "10.60.10.17"
+        ],
+        "message": "Scanner source",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "Rapid7-SCAN-01"
+        ],
+        "message": "Scanner appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Qualys VMDR",
+    "sourceRef": "n1e2f3a4-b5c6-d7e8-f9a0-b1c2d3e4f5a6",
+    "title": "End-of-life software detected",
+    "description": "Qualys VMDR identified end-of-life software on WEB-PRD-07: OpenSSL 1.0.2 (EOL since 2019-12-31). Vendor support discontinued; upgrade to OpenSSL 3.x recommended.",
+    "severity": 1,
+    "date": 1738117897238,
+    "tags": [
+      "Qualys VMDR",
+      "T1190"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "WEB-PRD-07"
+        ],
+        "message": "Affected host",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n9e0f1a2-b3c4-d5e6-f7a8-b9c0d1e2f3a4",
+    "title": "Anonymous SMB authentication followed by service creation",
+    "description": "Microsoft Defender for Endpoint flagged service creation on BACKUP-SRV-02 from anonymous SMB session originating at 172.18.40.21. Routine Veeam DR replication pattern; correlate with backup window.",
+    "severity": 3,
+    "date": 1738126940525,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1021.002"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-ADM-01"
+        ],
+        "message": "Admin workstation",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-118"
+        ],
+        "message": "Target endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "n4f5a6b7-c8d9-e0f1-a2b3-c4d5e6f7a8b9",
+    "title": "Malicious attachment detected by sandbox analysis",
+    "description": "Google Workspace Security sandboxed attachment 'OrderConfirmation_2024.docm' from sender external@unknown-llc.tld and detected macro execution attempting to download payload. Quarantined.",
+    "severity": 2,
+    "date": 1738474200008,
+    "tags": [
+      "Google Workspace Security",
+      "T1566.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "finance@corp.local"
+        ],
+        "message": "Recipient mailbox",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "invoice-portal.co"
+        ],
+        "message": "Sender domain",
+        "tlp": 2
+      },
+      {
+        "dataType": "url",
+        "data": [
+          "https://invoice-portal.co/view/doc-2024"
+        ],
+        "message": "Embedded URL",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Rapid7 InsightVM",
+    "sourceRef": "n0f1a2b3-c4d5-e6f7-a8b9-c0d1e2f3a4b6",
+    "title": "Insecure default configuration on application server",
+    "description": "Rapid7 InsightVM identified default credentials accepted on Tomcat manager interface at app-srv-12.corp.local:8080. Configuration deviates from security baseline.",
+    "severity": 3,
+    "date": 1738529057918,
+    "tags": [
+      "Rapid7 InsightVM",
+      "T1078.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "APP-CRM-02"
+        ],
+        "message": "Probed host",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "10.10.8.34"
+        ],
+        "message": "Probing source IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n2f3a4b5-c6d7-e8f9-a0b1-c2d3e4f5a6b8",
+    "title": "Password spray attempt blocked",
+    "description": "Microsoft Entra ID Protection detected 47 failed authentications across 32 distinct user accounts originating from IP 200.150.30.88 within 8 minutes. Pattern matches password spray. Smart lockout engaged.",
+    "severity": 3,
+    "date": 1738607593212,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1110.003"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "200.150.30.88"
+        ],
+        "message": "Source of password spray",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Qualys VMDR",
+    "sourceRef": "n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c4",
+    "title": "Insecure TLS cipher suite advertised on internal service",
+    "description": "Qualys VMDR detected TLS 1.0 enabled with RC4-SHA cipher on app.corp.local:8443. Internal service exposed to BEAST/CRIME attack vectors. Recommended: disable TLS 1.0/1.1 and weak ciphers.",
+    "severity": 1,
+    "date": 1739207329393,
+    "tags": [
+      "Qualys VMDR",
+      "T1190"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "app.corp.local"
+        ],
+        "message": "Affected service",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Microsoft Entra ID Protection",
+    "sourceRef": "n3a4b5c6-d7e8-f9a0-b1c2-d3e4f5a6b7c9",
+    "title": "User flagged as high risk",
+    "description": "Microsoft Entra ID Protection elevated risk level for user p.freitas to High after multiple anomaly signals (atypical location, leaked credentials match, anonymous IP). Account flagged for IT review.",
+    "severity": 3,
+    "date": 1739610450930,
+    "tags": [
+      "Microsoft Entra ID Protection",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "p.freitas"
+        ],
+        "message": "Flagged user",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "45.182.21.10"
+        ],
+        "message": "Anomalous source IP",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "200.150.30.5"
+        ],
+        "message": "Previous session IP",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Secure Firewall",
+    "sourceRef": "n1c2d3e4-f5a6-b7c8-d9e0-f1a2b3c4d5e6",
+    "title": "Encrypted traffic with weak TLS cipher",
+    "description": "Cisco Secure Firewall observed TLS 1.0 with RC4 cipher in use between 10.40.7.18 and 192.168.50.9:8443. Internal application not enforcing modern TLS. Compliance policy flagged.",
+    "severity": 1,
+    "date": 1739724226003,
+    "tags": [
+      "Cisco Secure Firewall",
+      "T1573"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "ip",
+        "data": [
+          "10.60.10.16"
+        ],
+        "message": "Scanner source",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "Nessus-SCAN-02"
+        ],
+        "message": "Scanner appliance",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Identity",
+    "source": "Okta",
+    "sourceRef": "n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d3",
+    "title": "New device claim for existing user",
+    "description": "Okta recorded device enrollment for user c.ramos: new Windows device (claimed via Okta Verify) replacing previous registered device. Device serial: WV-XXXX-9821.",
+    "severity": 2,
+    "date": 1739729776159,
+    "tags": [
+      "Okta",
+      "T1078"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "username",
+        "data": [
+          "c.ramos"
+        ],
+        "message": "Authenticating user",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "SSO-EDGE-01"
+        ],
+        "message": "Gateway appliance",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "179.23.55.80"
+        ],
+        "message": "Source IP address",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Rapid7 InsightVM",
+    "sourceRef": "450a2e03-066c-5609-af60-4c8c52b37854",
+    "title": "New high-severity CVE detected on finance workstation",
+    "description": "Rapid7 InsightVM identified CVE-2024-30040 (Microsoft MSHTML platform spoofing, CVSS 7.8) on FIN-WS-200 during scheduled vulnerability scan. Patch available via Patch Tuesday April 2024.",
+    "severity": 3,
+    "date": 1739816923136,
+    "tags": [
+      "Rapid7 InsightVM",
+      "T1190"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-200"
+        ],
+        "message": "Vulnerable host",
+        "tlp": 2
+      },
+      {
+        "dataType": "other",
+        "data": [
+          "CVE-2024-30040"
+        ],
+        "message": "CVE identifier",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Backup",
+    "source": "Veeam Backup & Replication",
+    "sourceRef": "n9a0b1c2-d3e4-f5a6-b7c8-d9e0f1a2b3c4",
+    "title": "High-volume outbound data transfer detected",
+    "description": "Veeam Backup & Replication reported a large data transfer from VM-ERP-02 to 172.18.40.22. Transfer volume exceeded the short-term rolling average. The job ran during the configured replication window.",
+    "severity": 1,
+    "date": 1739937109947,
+    "tags": [
+      "Veeam Backup & Replication"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "VM-ERP-02"
+        ],
+        "message": "Backup source",
+        "tlp": 2
+      },
+      {
+        "dataType": "ip",
+        "data": [
+          "172.18.40.22"
+        ],
+        "message": "Repository destination",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Network",
+    "source": "Cisco Umbrella",
+    "sourceRef": "070f26cd-2ce7-5c25-9e51-953d96193ba6",
+    "title": "DNS query to sinkholed domain (legacy malware family)",
+    "description": "Cisco Umbrella blocked an outbound DNS query from IT-LT-007 to ek-traffic-stats[.]com which resolves to a Microsoft sinkhole. Indicates legacy adware on the host. Security category: Sinkhole.",
+    "severity": 2,
+    "date": 1740147428197,
+    "tags": [
+      "Cisco Umbrella",
+      "T1071.004"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "domain",
+        "data": [
+          "ek-traffic-stats.com"
+        ],
+        "message": "Sinkholed domain",
+        "tlp": 2
+      },
+      {
+        "dataType": "hostname",
+        "data": [
+          "IT-LT-007"
+        ],
+        "message": "Endpoint",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Email",
+    "source": "Google Workspace Security",
+    "sourceRef": "n5a6b7c8-d9e0-f1a2-b3c4-d5e6f7a8b9c0",
+    "title": "Reply-chain hijack attempt detected",
+    "description": "Google Workspace Security flagged reply email referencing existing thread ID with previously-unseen sender (acme-payables-billing@spoofed-domain.tld). Reply-chain hijack pattern detected.",
+    "severity": 3,
+    "date": 1740302989122,
+    "tags": [
+      "Google Workspace Security",
+      "T1566"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "mail",
+        "data": [
+          "procurement@corp.local"
+        ],
+        "message": "Recipient mailbox",
+        "tlp": 2
+      },
+      {
+        "dataType": "domain",
+        "data": [
+          "docs-review.net"
+        ],
+        "message": "Sender domain",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Vulnerability",
+    "source": "Qualys VMDR",
+    "sourceRef": "n0d1e2f3-a4b5-c6d7-e8f9-a0b1c2d3e4f5",
+    "title": "CIS benchmark policy failure on Windows host",
+    "description": "Qualys Policy Compliance flagged failure on CIS Benchmark Windows Server 2022 v2.0 control 18.9.59.3.9.5: 'Ensure UAC is configured to behavior of elevation prompt'. Host: DB-SQL-04.",
+    "severity": 2,
+    "date": 1740319008409,
+    "tags": [
+      "Qualys VMDR",
+      "T1548"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "DB-SQL-04"
+        ],
+        "message": "Non-compliant host",
+        "tlp": 2
+      }
+    ]
+  },
+  {
+    "type": "Endpoint",
+    "source": "Microsoft Defender for Endpoint",
+    "sourceRef": "n7e8f9a0-b1c2-d3e4-f5a6-b7c8d9e0f1a2",
+    "title": "PowerShell launched by uncommon parent process",
+    "description": "Microsoft Defender for Endpoint observed powershell.exe on ENG-WS-145 spawned by msbuild.exe (build agent context) by service account svc_buildbot. First occurrence on this host.",
+    "severity": 3,
+    "date": 1740469511967,
+    "tags": [
+      "Microsoft Defender for Endpoint",
+      "T1059.001"
+    ],
+    "tlp": 2,
+    "pap": 2,
+    "flag": false,
+    "status": "New",
+    "observables": [
+      {
+        "dataType": "hostname",
+        "data": [
+          "FIN-WS-042"
+        ],
+        "message": "Executing endpoint",
+        "tlp": 2
+      },
+      {
+        "dataType": "username",
+        "data": [
+          "svc_sccm"
+        ],
+        "message": "Service account",
+        "tlp": 2
+      }
+    ]
+  }
+]

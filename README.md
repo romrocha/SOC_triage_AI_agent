@@ -1,8 +1,15 @@
 # SOC Alert Triage — Synthetic Research Dataset
 
+> **Repository status (May 2026)**  
+> This repository is the public home for my AI research on **agentic SOC alert triage** — evaluating whether LLM-based agents can perform Tier-1 triage through recursive entity pivoting and correlation across multi-vendor alert streams.  
+> **For now, only the synthetic dataset is published here.** Full research artifacts — additional data, experimental results, and agent code — will be added **after July 2026**.  
+> Preliminary findings will be presented at:
+> - **[YSTS Security Conference](https://ysts.org/)** — São Paulo, Brazil (May 2026)
+> - **[38th Annual FIRST Conference](https://www.first.org/conference/2026/program)** — Denver, USA (June 2026)
+
 A reproducible, synthetic dataset for evaluating LLM-based agents on Tier-1 SOC alert triage. Built for the YSTS research talk *"Agentes de IA no SOC — isso funciona?"* (Rômulo Rocha, 2026).
 
-This dataset companions the agent code (released separately) and is intended to support **independent reproduction** of the talk's results, **comparative benchmarking** of other agents, and **methodology critique** by the community.
+This dataset companions the agent code (released separately after July 2026) and is intended to support **independent reproduction** of the talk's results, **comparative benchmarking** of other agents, and **methodology critique** by the community.
 
 ---
 
@@ -353,7 +360,7 @@ If you use this dataset in published work, please cite:
   author = {Rocha, R{\^o}mulo},
   year   = {2026},
   howpublished = {YSTS Brazil 2026 — Companion dataset to talk and CWTS methodology paper},
-  url    = {https://github.com/[TBD]/soc-triage-dataset}
+  url    = {https://github.com/romrocha/SOC_AI_agent-research}
 }
 ```
 
@@ -361,4 +368,4 @@ If you use this dataset in published work, please cite:
 
 ## Contact
 
-Questions, methodology critique, or interest in collaborative extension: rrocha@trace.finance · @romulo_rocha
+Questions, methodology critique, or interest in collaborative extension: @romrocha

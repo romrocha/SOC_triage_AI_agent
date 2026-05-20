@@ -1,0 +1,24 @@
+{
+  "schema": "Same as input/round2 (TheHive-style alert JSON)",
+  "scenario": "Synthetic SOC dataset with realistic vendor products, single-product tags, and interleaved campaign/noise events across a 30-day window.",
+  "derived_from": "round1 redesign — v3: 30-day window with realistic kill-chain timing and uniform-random noise distribution.",
+  "anchor_utc": "2024-11-27",
+  "window_days": 30,
+  "window_end_utc": "2024-12-26",
+  "timeline": "100 alerts across 2024-11-27 → 2024-12-26 UTC. Campaigns A/B follow realistic phase-based kill-chain timing (initial access → impact spans ~30 days for Campaign A; insider exfil progresses every 2-3 days for Campaign B). Noise (70 alerts) is uniform-random across the same window with seed=42 for reproducibility.",
+  "patch_history": [
+    "v1_baseline — 1-day window, original kill-chain timing, hint-leaking titles in 9 campaign alerts and a brute-force cluster in noise.",
+    "v2_post_hint_fix — rewrote 9 campaign titles to remove diagnostic phrasing, deleted 6 brute-force-cluster noise alerts and replaced them with 6 diverse isolated alerts (Qualys, Rapid7, Okta, Cisco Umbrella, Cisco Secure Firewall, Veeam).",
+    "v3_30day_window — expanded the window from 1 day to 30 days. Campaign timing follows phase-based kill-chain logic; noise is uniform-random with seed=42. Source refs preserved across all versions.",
+    "v4_mde_consolidation — consolidated 5 EDR vendors (Defender for Endpoint, CrowdStrike Falcon, SentinelOne, Cortex XDR, Jamf Protect) into 1 primary EDR (Microsoft Defender for Endpoint) + Jamf Protect for macOS. Migrated 2 alerts to Microsoft Purview (file/USB DLP territory). Rewrote 30 alert titles and descriptions to follow MDE/Purview alert family conventions referenced from Sigma rules, Microsoft Sentinel detections, and Microsoft alert classification documentation.",
+    "v5_taxonomy — Campaign A: removed 2 alerts (redundant Abnormal SMB auth and ASR rule duplicate of vssadmin event); added 2 alerts to fill missing kill-chain tactics — Token impersonation (TA0004 Privilege Escalation, T1134.001) and Scheduled task creation (TA0003 Persistence, T1053.005). Total Campaign A stays at 15. Noise: diversified 28 alerts across 9 repetitive clusters (Okta/Entra identity, Qualys/Rapid7 vuln mgmt, Workspace/Netskope email-cloud, Cisco network, Darktrace NDR, Jamf macOS) — replaced repeated identical titles with realistic per-product variety while keeping 2-3 of each original cluster intact. Largest noise cluster reduced from 9× → 3×. New detection categories represented: vuln management depth (CVE/EOL/CIS/cipher), IAM admin (SSPR/OAuth/adaptive policy), CASB UEBA (unsanctioned app/risky grant), email security depth (DMARC/sandbox/reply-chain hijack), network depth (east-west/weak cipher/DNS tunneling)."
+  ],
+  "source_convention": "source uses real product names, such as Cortex XDR, Google Workspace Security, Netskope, and CrowdStrike Falcon.",
+  "tag_convention": "tags contains exactly one value: the same product name used in source.",
+  "source_ref_policy": "Existing round1 sourceRef values were preserved across all patches so historical references remain stable.",
+  "files": {
+    "campaing-a/finance-ransomware-alerts.json": 15,
+    "campaing-b/hr-insider-threat-alerts.json": 15,
+    "noise/noise-alerts.json": 70
+  }
+}

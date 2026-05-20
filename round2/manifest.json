@@ -1,0 +1,17 @@
+{
+  "schema": "Same as input/round1 (TheHive-style alert JSON)",
+  "scenario": "Synthetic SOC dataset with realistic vendor products, single-product tags, and interleaved campaign/noise events.",
+  "derived_from": "round2 redesign for realistic SOC telemetry",
+  "anchor_utc": "2024-01-01",
+  "window_months": 4,
+  "window_end_utc": "2024-04-30",
+  "timeline": "All 100 alerts are distributed across Jan-Apr 2024 with noise, finance-ransomware activity, and HR insider-exfil activity intentionally mixed in time.",
+  "source_convention": "source uses real product names, such as Cortex XDR, Google Workspace Security, Netskope, and CrowdStrike Falcon.",
+  "tag_convention": "tags contains exactly one value: the same product name used in source.",
+  "source_ref_policy": "Existing round2 sourceRef values were preserved so historical references remain stable.",
+  "files": {
+    "campaing-a/finance-ransomware-alerts.json": 15,
+    "campaing-b/hr-insider-threat-alerts.json": 15,
+    "noise/noise-alerts.json": 70
+  }
+}
