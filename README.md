@@ -69,7 +69,7 @@ Real SOC data is encumbered by PII, legal constraints, and customer-specific bia
 
 ### 2. TheHive as canonical schema
 
-Alerts conform to the [TheHive](https://github.com/TheHive-Project/TheHive) JSON ingestion format because it (a) is open-source and free to use, (b) sees actual production adoption in mid-sized SOCs, and (c) preserves the field shape an L1 analyst encounters in real triage. Every alert carries `sourceRef`, `severity`, `tlp`, `pap`, `flag`, `status`, and a list of `observables` with explicit `dataType` and `ioc` flags.
+Alerts conform to the [TheHive](https://github.com/TheHive-Project/TheHive) JSON ingestion format because it (a) is open-source and free to use, (b) sees actual production adoption in mid-sized SOCs, and (c) preserves the field shape an L1 analyst encounters in real triage. Every alert carries `sourceRef`, `severity`, `tlp`, `pap`, `flag`, `status`, and a list of `observables` with explicit `dataType`.
 
 ### 3. Time as the only variable across rounds
 
@@ -129,9 +129,9 @@ Campaigns have **internal entity coherence** — the same user, host, and IP app
 
 This is the structural pattern responsible for the hardest false-positive mode in real SOC triage: noise that *looks* correlated.
 
-### Observable types and IOC flags
+### Observable types 
 
-The dataset carries **215 observables** across 100 alerts, distributed across 8 standard TheHive observable types: `mail`, `domain`, `url`, `username`, `hostname`, `ip`, `file`, `other`. **76 of them carry the explicit `ioc: true` flag** — meaning the agent (or analyst) should treat them as indicators of compromise eligible for pivoting, while the remaining 139 are context-only. This matches real TheHive deployment patterns.
+The dataset carries **215 observables** across 100 alerts, distributed across 8 standard TheHive observable types: `mail`, `domain`, `url`, `username`, `hostname`, `ip`, `file`, `other` — meaning the agent (or analyst) should treat them as indicators of compromise eligible for pivoting, while the remaining 139 are context-only. This matches real TheHive deployment patterns.
 
 ### Compliance metadata preserved
 
@@ -202,8 +202,6 @@ Each alert JSON object has the following structure:
       "data": ["FIN-LT-204"],
       "message": "Compromised finance endpoint",
       "tlp": 2,
-      "ioc": true,
-      "sighted": false
     }
   ]
 }
