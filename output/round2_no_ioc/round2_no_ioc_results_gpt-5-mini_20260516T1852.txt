@@ -1,0 +1,318 @@
+Report generated at (UTC): 2026-05-16T19:49:50.858Z
+================================================================================
+CAMPAIGN ANALYSIS REPORT
+================================================================================
+
+Total Campaigns Detected: 9
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #1: campaign-case-l-azevedo-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 2
+  • Confidence: 30.00%
+  • Summary: Investigative tracking: Jamf Protect notarization failure for /usr/local/bin/dev_helper (metadata mismatch). Include Darktrace GitHub outbound alert as possible binary source indicator. Do not escalate until Jamf/EDR corroboration and file hash analysis complete.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:46:17
+
+🚨 Alerts In This Case (chronological):
+  • n3e4f5a6-b7c8-d9e0-f1a2-b3c4d5e6f7a9 | Deviation from peer group baseline traffic profile | source=Darktrace | date=2024-12-30T18:47:15Z | status=in_campaign
+  • n6b7c8d9-e0f1-a2b3-c4d5-e6f7a8b9c0d2 | Notarization check failure on executed binary | source=Jamf Protect | date=2024-12-31T12:32:00Z | status=in_campaign
+
+📝 Rationale:
+  Jamf Protect alert for /usr/local/bin/dev_helper is isolated and contains conflicting metadata (MAC-DEV-08 vs MAC-DES-03 and r.tavares vs l.azevedo). Darktrace alert shows GitHub outbound volume which could indicate a source for the binary. Evidence is insufficient to escalate; create an investigative campaign to track collection of Jamf raw JSON, Jamf server logs, EDR process telemetry (both hostnames and both usernames), binary retrieval and hashing, and 30-day lookback.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #2: campaign-phishing-vendor-update-info-2024-11
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 2
+  • Confidence: 70.00%
+  • Summary: Create phishing tracking campaign for related inbound emails from vendor-update.info and secure-signature.org. Actions: block/quarantine sender domains and URLs, collect headers/samples, search mail logs for additional hits and clicked links, notify affected recipients.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:42:28
+
+🚨 Alerts In This Case (chronological):
+  • n7c8d9e0-f1a2-b3c4-d5e6-f7a8b9c0d1e2 | Inbound email with suspicious sender domain | source=Google Workspace Security | date=2024-11-27T07:45:11Z | status=in_campaign
+  • n8d9e0f1-a2b3-c4d5-e6f7-a8b9c0d1e2f3 | Inbound email with suspicious sender domain | source=Google Workspace Security | date=2024-12-20T11:16:45Z | status=in_campaign
+
+📝 Rationale:
+  Both alerts are unprocessed Google Workspace phishing detections (T1566) with failed DMARC and brand-impersonation URLs; they target legal@corp.local and helpdesk@corp.local and share triage signals consistent with the same phishing run. Grouping them enables coordinated blocking, mail-log searches, and recipient notifications while acknowledging no confirmed compromise.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #3: campaign-case-rapid7-scan-02-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 4
+  • Confidence: 90.00%
+  • Summary: Confirmed scanner/asset-discovery cluster (Nessus/Rapid7). Grouped scanner alerts for tracking and closure; further network/EDR investigation recommended for the remaining ambiguous SMB alert.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:39:54
+
+🚨 Alerts In This Case (chronological):
+  • n0b1c2d3-e4f5-a6b7-c8d9-e0f1a2b3c4d5 | Internal network port scanning from corporate subnet | source=Cisco Secure Firewall | date=2024-12-26T09:22:56Z | status=in_campaign
+  • n3e4f5a6-b7c8-d9e0-f1a2-b3c4d5e6f7a8 | Internal network port scanning from corporate subnet | source=Cisco Secure Firewall | date=2024-12-29T15:44:17Z | status=in_campaign
+  • n2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f7 | Anomalous east-west traffic pattern detected | source=Cisco Secure Firewall | date=2025-01-28T17:48:53Z | status=in_campaign
+  • n1c2d3e4-f5a6-b7c8-d9e0-f1a2b3c4d5e6 | Encrypted traffic with weak TLS cipher | source=Cisco Secure Firewall | date=2025-02-16T16:43:46Z | status=in_campaign
+
+📝 Rationale:
+  Investigation shows multiple alerts referencing vulnerability scanners (Nessus and Rapid7) on 10.60.10.15/16/18. Observables, entity validation, and correlation indicate routine vulnerability/asset scans (T1046) rather than malicious lateral movement. Grouping these scanner alerts for tracking/closure; ambiguous SMB behavior (separate alert n2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f7) is intentionally excluded pending NetFlow/EDR timeline and NAT translation checks.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #4: campaign-insider-exfil-m-castro-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 2
+  • Confidence: 30.00%
+  • Summary: Possible cloud upload activity to tenant-my.sharepoint.com by two users (g.oliveira, m.castro). Low confidence link due to missing session/host artifacts. Recommend collecting Netskope session logs and M365 audit logs.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:34:24
+
+🚨 Alerts In This Case (chronological):
+  • n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c3 | File upload to cloud storage platform detected | source=Netskope | date=2024-12-10T22:58:48Z | status=in_campaign
+  • n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f0 | Upload to unsanctioned cloud application | source=Netskope | date=2024-12-11T18:54:24Z | status=in_campaign
+
+📝 Rationale:
+  Two Netskope DLP alerts reference the same cloud domain (tenant-my.sharepoint.com) and indicate file upload activity. There is insufficient telemetry (no source IPs, hostnames, session IDs, or file hashes) to confirm a coordinated exfiltration, but the shared destination warrants grouping for follow-up collection (Netskope session logs, M365 audit logs, and EDR artifacts).
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #5: campaign-case-it-adm-04-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 2
+  • Confidence: 25.00%
+  • Summary: Investigative campaign for APP-SRV-12 remote-service activity: collect EDR/process artifacts and Windows security/auth logs to determine whether PsExec-style service creation was authorized or malicious.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:29:33
+
+🚨 Alerts In This Case (chronological):
+  • n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e4 | Service enumeration and port scanning on production host | source=Qualys VMDR | date=2024-12-09T11:30:57Z | status=in_campaign
+  • n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d8 | Remote service creation matching PsExec pattern | source=Microsoft Defender for Endpoint | date=2024-12-19T20:07:07Z | status=in_campaign
+
+📝 Rationale:
+  Group alerts referencing the same host (APP-SRV-12) for investigative follow-up. n2b3c4d5 shows PsExec-style remote service creation (PSEXESVC.EXE) from 10.42.7.18 by svc_admin; n9c0d1e2 is a Qualys VMDR service/port scan against APP-SRV-12 from 10.10.5.20. While evidence doesn't confirm malicious campaign overlap, their shared target host warrants an investigative campaign (low confidence) to collect EDR artifacts, Windows security logs, and change/ticketing info before triage/containment.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #6: campaign-ransomware-svc-sccm-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 3
+  • Confidence: 35.00%
+  • Summary: Monitoring campaign for isolated PowerShell activity on OPS-WS-301 under svc_itops; likely approved admin automation but requires analyst confirmation and continued monitoring. Not merged into existing ransomware/BR campaigns.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:14:52
+
+🚨 Alerts In This Case (chronological):
+  • n3a4b5c6-d7e8-f9a0-b1c2-d3e4f5a6b7c8 | PowerShell command line with bypass execution policy | source=Microsoft Defender for Endpoint | date=2024-11-30T20:15:31Z | status=in_campaign
+  • n5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e0 | PowerShell process started with hidden window | source=Microsoft Defender for Endpoint | date=2024-12-29T09:11:59Z | status=in_campaign
+  • n7e8f9a0-b1c2-d3e4-f5a6-b7c8d9e0f1a2 | PowerShell launched by uncommon parent process | source=Microsoft Defender for Endpoint | date=2025-02-25T07:45:11Z | status=in_campaign
+
+📝 Rationale:
+  Seed alert (OPS-WS-301, svc_itops) is isolated by exact observables and shows PowerShell with hidden window; semantic matches are broad admin automation across different hosts/accounts. No evidence of linkage to confirmed ransomware or BR logon-script campaigns. Create a low-confidence monitoring campaign to flag for analyst review and ongoing monitoring of OPS-WS-301 and svc_itops for any follow-up suspicious behavior.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #7: campaign-case-br-ws-011-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 4
+  • Confidence: 50.00%
+  • Summary: Escalate suspicious logon-script activity across BR-WS endpoints (wscript/VBS/PowerShell wrappers). Requires EDR host reconciliation and artifact collection to confirm benign admin scripts vs malicious variants.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:11:58
+
+🚨 Alerts In This Case (chronological):
+  • n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b3 | wscript.exe spawning powershell.exe at user logon | source=Microsoft Defender for Endpoint | date=2024-12-07T03:09:52Z | status=in_campaign
+  • n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f1 | VBScript spawning cmd.exe from logon GPO | source=Microsoft Defender for Endpoint | date=2024-12-28T00:04:51Z | status=in_campaign
+  • n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c8 | Logon script writing to startup folder | source=Microsoft Defender for Endpoint | date=2025-01-20T11:27:29Z | status=in_campaign
+  • n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e0 | wscript.exe with encoded JScript at logon | source=Microsoft Defender for Endpoint | date=2025-01-21T06:51:31Z | status=in_campaign
+
+📝 Rationale:
+  Multiple Defender for Endpoint alerts across BR-WS endpoints show logon-time script activity (wscript/vbs/PowerShell) and shared filenames (logon.ps1, vpn_bootstrap.ps1, teams_cleanup.ps1, drives.vbs). Hostname fields are inconsistent (BR-WS-011/013/014/015) in different alert fields, and no file contents/hashes or full process trees are present to confirm whether these are benign administrative scripts or malicious variants. Given repeated similar behavior and potential for persistence via logon GPO/scripts, escalate as a focused investigation cluster to collect EDR metadata, script artifacts, and reconcile host identities.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #8: campaign-ransomware-p-freitas-2024-12
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 12
+  • Confidence: 90.00%
+  • Summary: Identity-focused credential abuse cluster: probable password-spray/credential-stuffing and session/token replay using anonymizing exit nodes. Track impacted users, revoke sessions/tokens, force password resets, block anonymizing IP range, and review VPN/MFA logs.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 19:05:40
+
+🚨 Alerts In This Case (chronological):
+  • n1e2f3a4-b5c6-d7e8-f9a0-b1c2d3e4f5a7 | Impossible travel sign-in anomaly detected | source=Microsoft Entra ID Protection | date=2024-12-02T21:46:48Z | status=in_campaign
+  • n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c6 | Sign-in from unrecognized geographic location | source=Okta | date=2024-12-13T03:59:19Z | status=in_campaign
+  • n4b5c6d7-e8f9-a0b1-c2d3-e4f5a6b7c8d0 | Impossible travel sign-in anomaly detected | source=Microsoft Entra ID Protection | date=2024-12-15T04:56:11Z | status=in_campaign
+  • n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b1 | Sign-in blocked by adaptive access policy | source=Okta | date=2024-12-17T10:17:50Z | status=in_campaign
+  • n0d1e2f3-a4b5-c6d7-e8f9-a0b1c2d3e4f6 | Impossible travel sign-in anomaly detected | source=Microsoft Entra ID Protection | date=2025-01-05T07:37:14Z | status=in_campaign
+  • n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e9 | Risky OAuth grant detected for user account | source=Netskope | date=2025-01-16T05:02:16Z | status=in_campaign
+  • n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e5 | Sign-in from anonymous IP address (Tor) | source=Microsoft Entra ID Protection | date=2025-01-17T07:44:15Z | status=in_campaign
+  • n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d4 | Token replay detected | source=Microsoft Entra ID Protection | date=2025-01-19T14:13:46Z | status=in_campaign
+  • n5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e1 | Unfamiliar sign-in properties | source=Microsoft Entra ID Protection | date=2025-01-22T13:09:25Z | status=in_campaign
+  • n6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b2 | Personal account use blocked by SaaS policy | source=Netskope | date=2025-01-22T18:12:33Z | status=in_campaign
+  • n2f3a4b5-c6d7-e8f9-a0b1-c2d3e4f5a6b8 | Password spray attempt blocked | source=Microsoft Entra ID Protection | date=2025-02-03T18:33:13Z | status=in_campaign
+  • n3a4b5c6-d7e8-f9a0-b1c2-d3e4f5a6b7c9 | User flagged as high risk | source=Microsoft Entra ID Protection | date=2025-02-15T09:07:30Z | status=in_campaign
+
+📝 Rationale:
+  Multiple identity alerts share clear observables (anonymized/Tor exit IPs 45.182.21.10–13, credential-abuse IPs 200.150.30.5/88, VPN-GW-01, domain box.corp.local) across repeated usernames (d.araujo, k.barbosa, p.freitas, n.teixeira, a.ferreira). Temporal span ~74 days, pattern consistent with credential-stuffing/password-spray followed by token/session reuse via anonymizing infrastructure. No overlap with the existing ransomware campaign. Create a dedicated campaign to track containment (token/refresh revocation, forced resets, block IPs) and investigation tasks.
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN #9: campaign-ransomware-finance-b-smith-2024-11
+────────────────────────────────────────────────────────────────────────────────
+
+📊 Overview:
+  • Alerts: 51
+  • Confidence: 90.00%
+  • Summary: Confirmed multi-stage LockBit 3.0 ransomware incident tied to user b.smith and finance hosts (FIN-LT-204 initial, FIN-WS-118 lateral/encryptor, FS-FIN-01 impacted). Actions: isolate hosts, preserve forensic images, rotate credentials, block IOCs and validate backups.
+  • Run ID: round2_no_ioc-gpt-5-mini-20260516T1852
+  • Created at: 2026-05-16 18:56:36
+
+🚨 Alerts In This Case (chronological):
+  • a1f2e8d4-9c3b-4a1e-8f7d-1a2b3c4d5e6f | Credential phishing delivered to finance mailbox | source=Google Workspace Security | date=2024-11-27T12:15:10Z | status=in_campaign
+  • b2e3f9d5-1d4c-5b2f-9e8d-2b3c4d5e6f7a | User click on credential phishing URL | source=Proofpoint TAP | date=2024-11-28T04:15:52Z | status=in_campaign
+  • n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d7 | Sign-in from unrecognized geographic location | source=Okta | date=2024-11-30T02:53:52Z | status=in_campaign
+  • n8f9a0b1-c2d3-e4f5-a6b7-c8d9e0f1a2b3 | High-volume outbound data transfer detected | source=Veeam Backup & Replication | date=2024-11-30T08:25:47Z | status=in_campaign
+  • c3f4a0e6-2e5d-6c3a-0f9e-3c4d5e6f7a8b | Risky sign-in flagged for finance user b.smith | source=Microsoft Entra ID Protection | date=2024-11-30T18:35:17Z | status=in_campaign
+  • n2f3a4b5-c6d7-e8f9-a0b1-c2d3e4f5a6b7 | PowerShell with encoded command argument | source=Microsoft Defender for Endpoint | date=2024-12-01T03:27:36Z | status=in_campaign
+  • 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d | Unusual after-hours sign-in to HR applications | source=Microsoft Entra ID Protection | date=2024-12-02T01:54:07Z | status=in_campaign
+  • 2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e | Mass download from HR compensation site | source=Microsoft Defender for Cloud Apps | date=2024-12-05T05:11:50Z | status=in_campaign
+  • d4e5b1f7-3f6e-7d4b-1a0f-4d5e6f7a8b9c | Office application launching suspicious child process | source=Microsoft Defender for Endpoint | date=2024-12-06T18:38:32Z | status=in_campaign
+  • e5f6c2a8-4a7f-8e5c-2b1a-5e6f7a8b9c0d | Anomalous outbound connection by PowerShell | source=Microsoft Defender for Endpoint | date=2024-12-06T22:17:26Z | status=in_campaign
+  • n5a6b7c8-d9e0-f1a2-b3c4-d5e6f7a8b9c1 | Unsigned binary execution on macOS endpoint | source=Jamf Protect | date=2024-12-08T09:35:37Z | status=in_campaign
+  • 3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f | Anomalous file compression activity in user profile | source=Microsoft Defender for Endpoint | date=2024-12-11T03:13:29Z | status=in_campaign
+  • n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c2 | Sign-in from unrecognized geographic location | source=Okta | date=2024-12-11T19:56:24Z | status=in_campaign
+  • f6a7d3b9-5b8a-9f6d-3c2b-6f7a8b9c0d1e | Suspicious access to LSASS by unsigned binary | source=Microsoft Defender for Endpoint | date=2024-12-11T21:40:06Z | status=in_campaign
+  • 4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a | Removable storage device connected to managed endpoint | source=Microsoft Defender for Endpoint | date=2024-12-17T01:33:21Z | status=in_campaign
+  • ba46e48e-b60b-5c79-a311-1d0bb2c5241a | Token impersonation by suspicious process | source=Microsoft Defender for Endpoint | date=2024-12-18T02:35:13Z | status=in_campaign
+  • 5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b | Outbound TLS upload to dropbox.com from HR endpoint | source=Netskope | date=2024-12-20T13:18:47Z | status=in_campaign
+  • n2b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d9 | Logon script executing encoded PowerShell | source=Microsoft Defender for Endpoint | date=2024-12-20T22:08:29Z | status=in_campaign
+  • 6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c | Large outbound transfer to personal cloud storage | source=Cisco Secure Firewall | date=2024-12-26T15:29:43Z | status=in_campaign
+  • b8c9f5d1-7d0c-1b8f-5e4d-8b9c0d1e2f3a | SMB authentication chain across finance subnet (FIN-LT-204 → FS-FIN-01) | source=Cisco Secure Firewall | date=2024-12-27T02:29:26Z | status=in_campaign
+  • n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d5 | WMI process creation on remote host | source=Microsoft Defender for Endpoint | date=2024-12-28T21:08:33Z | status=in_campaign
+  • n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a0 | Repeated MFA push prompts within short window | source=Okta | date=2024-12-30T01:47:07Z | status=in_campaign
+  • 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d | Sensitivity-labeled file accessed outside business pattern | source=Microsoft Purview | date=2024-12-31T10:55:16Z | status=in_campaign
+  • c9d0a6e2-8e1d-2c9a-6f5e-9c0d1e2f3a4b | Suspicious remote service installation via SMB | source=Microsoft Defender for Endpoint | date=2025-01-02T05:44:13Z | status=in_campaign
+  • n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a2 | Suspicious sequence of script hosts at logon | source=Microsoft Defender for Endpoint | date=2025-01-05T16:31:56Z | status=in_campaign
+  • n3c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e8 | Self-service password reset request rate-limited | source=Okta | date=2025-01-06T21:44:08Z | status=in_campaign
+  • 8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e | DLP policy match on outbound file containing HR salary taxonomy | source=Microsoft Purview | date=2025-01-07T04:21:18Z | status=in_campaign
+  • n6b7c8d9-e0f1-a2b3-c4d5-e6f7a8b9c0d1 | Email failed DMARC and SPF authentication | source=Google Workspace Security | date=2025-01-07T09:12:08Z | status=in_campaign
+  • d0e217b5-90da-547e-8225-19def24c34d9 | Scheduled task creation by uncommon process | source=Microsoft Defender for Endpoint | date=2025-01-08T11:21:53Z | status=in_campaign
+  • n9c0d1e2-f3a4-b5c6-d7e8-f9a0b1c2d3e6 | High-volume outbound data transfer detected | source=Veeam Backup & Replication | date=2025-01-09T15:33:48Z | status=in_campaign
+  • e1f2c8a4-0a3f-4e1c-8b7a-1e2f3a4b5c6d | Periodic HTTPS beaconing to recently registered domain | source=Zscaler Internet Access | date=2025-01-14T18:27:43Z | status=in_campaign
+  • 9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f | Salary workbook sent to personal webmail draft | source=Microsoft Purview | date=2025-01-16T08:58:16Z | status=in_campaign
+  • n0f1a2b3-c4d5-e6f7-a8b9-c0d1e2f3a4b5 | DCOM-based lateral movement (MMC20.Application) | source=Microsoft Defender for Endpoint | date=2025-01-16T18:17:54Z | status=in_campaign
+  • n0c1d2e3-f4a5-b6c7-d8e9-f0a1b2c3d4e7 | Risk-based step-up authentication required | source=Okta | date=2025-01-19T00:46:40Z | status=in_campaign
+  • c372a57c-0169-5247-9ca9-b6d5b74b3350 | Bulk OAuth token revocation for SaaS application | source=Okta | date=2025-01-19T23:51:42Z | status=in_campaign
+  • 0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a | Repeated download of compensation exports | source=Microsoft Defender for Cloud Apps | date=2025-01-22T18:45:13Z | status=in_campaign
+  • a3b4e0c6-2c5b-6a3e-0d9c-3a4b5c6d7e8f | Volume Shadow Copy deletion attempt via vssadmin.exe | source=Microsoft Defender for Endpoint | date=2025-01-27T01:52:00Z | status=in_campaign
+  • 1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b | Connection to personal cloud storage upload endpoint | source=Zscaler Internet Access | date=2025-01-29T00:01:36Z | status=in_campaign
+  • n9e0f1a2-b3c4-d5e6-f7a8-b9c0d1e2f3a4 | Anonymous SMB authentication followed by service creation | source=Microsoft Defender for Endpoint | date=2025-01-29T05:02:20Z | status=in_campaign
+  • f2a3d9b5-1b4a-5f2d-9c8b-2f3a4b5c6d7e | Possible ransomware activity: mass file rename detected | source=Microsoft Defender for Endpoint | date=2025-01-29T19:19:55Z | status=in_campaign
+  • n4f5a6b7-c8d9-e0f1-a2b3-c4d5e6f7a8b9 | Malicious attachment detected by sandbox analysis | source=Google Workspace Security | date=2025-02-02T05:30:00Z | status=in_campaign
+  • 2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c | Password-protected multi-volume archive created | source=Microsoft Defender for Endpoint | date=2025-02-06T19:25:16Z | status=in_campaign
+  • n7a8b9c0-d1e2-f3a4-b5c6-d7e8f9a0b1c4 | Insecure TLS cipher suite advertised on internal service | source=Qualys VMDR | date=2025-02-10T17:08:49Z | status=in_campaign
+  • 3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d | High-volume data transfer to removable storage | source=Microsoft Purview | date=2025-02-12T20:14:07Z | status=in_campaign
+  • n8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d3 | New device claim for existing user | source=Okta | date=2025-02-16T18:16:16Z | status=in_campaign
+  • b4c5f1d7-3d6c-7b4f-1e0d-4b5c6d7e8f9a | Backup tampering against finance file server | source=Rubrik Security Cloud | date=2025-02-17T10:47:48Z | status=in_campaign
+  • 450a2e03-066c-5609-af60-4c8c52b37854 | New high-severity CVE detected on finance workstation | source=Rapid7 InsightVM | date=2025-02-17T18:28:43Z | status=in_campaign
+  • 4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e | Outbound multi-part TLS to content.dropboxapi.com | source=Netskope | date=2025-02-19T07:59:38Z | status=in_campaign
+  • n5a6b7c8-d9e0-f1a2-b3c4-d5e6f7a8b9c0 | Reply-chain hijack attempt detected | source=Google Workspace Security | date=2025-02-23T09:29:49Z | status=in_campaign
+  • 5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f | Microsoft Purview DLP — high-confidence salary keyword match in outbound message | source=Microsoft Purview | date=2025-02-23T15:36:49Z | status=in_campaign
+  • c5d6a2e8-4e7d-8c5a-2f1e-5c6d7e8f9a0b | File creation matches known ransomware note pattern | source=Microsoft Defender for Endpoint | date=2025-02-23T16:04:11Z | status=in_campaign
+
+📝 Rationale:
+  Multiple alerts across EDR, email, firewall, Okta and backup systems share the principal account b.smith and finance hosts (FIN-LT-204, FIN-WS-118, FS-FIN-01). Timeline and behaviors form a coherent chain: phishing -> macro/encoded PowerShell -> credential theft (LSASS/token impersonation) -> lateral SMB/service install -> persistence (scheduled task) -> VSS delete -> mass file renames (.lockbit3) and ransom notes. Network indicators (cdn-sharepoint-acme-files.com, cdn-helpdesk-portal.com, 185.225.17.81) and backup target (172.18.40.21) corroborate C2 and backup tampering. Assessment: confirmed LockBit 3.0 ransomware campaign impacting finance. Recommend containment and IR escalation.
+
+================================================================================
+ALERT STATUS SUMMARY
+================================================================================
+  Unprocessed: 0
+  In Campaign: 82
+  False Positive: 18
+  Reviewed: 0
+================================================================================
+================================================================================
+EVALUATION (vs Ground Truth)
+================================================================================
+  Ground Truth Alerts  : 100
+  Agent-Evaluated      : 100
+  Overall Label Accuracy: 48.00%
+
+────────────────────────────────────────────────────────────────────────────────
+✓  MISSED THREATS: 0  —  No campaign alerts were incorrectly dismissed as false positive
+────────────────────────────────────────────────────────────────────────────────
+
+  The agent did not dismiss any real campaign alerts as false positives.
+
+────────────────────────────────────────────────────────────────────────────────
+NOISE FILTERING  —  Can the agent correctly identify false positives?
+────────────────────────────────────────────────────────────────────────────────
+
+                    Pred: FP    Pred: Not-FP 
+  Actual FP            18            52      
+  Actual Not-FP        0             30      
+
+  Precision : 100.00%  (of alerts marked FP, how many are truly noise)
+  Recall    : 25.71%  (of all actual noise, how much was caught)
+  F1 Score  : 40.91%
+
+  FP Rate           : 18.00%  (fraction of all alerts marked as false positive)
+  Review Efficiency : 1.00 alerts reviewed per true FP found
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN DETECTION  —  Can the agent correctly assign alerts to campaigns?
+────────────────────────────────────────────────────────────────────────────────
+
+                          Pred: Campaign    Pred: Not-Campaign 
+  Actual Campaign               30                  0          
+  Actual Not-Campaign           52                  18         
+
+  Precision : 36.59%  (of alerts placed in a campaign, how many truly belong)
+  Recall    : 100.00%  (of all actual campaign alerts, how many were found)
+  F1 Score  : 53.57%
+
+────────────────────────────────────────────────────────────────────────────────
+CAMPAIGN QUALITY  —  Did the agent reconstruct the right incident groups?
+────────────────────────────────────────────────────────────────────────────────
+
+  Expected Campaigns : 2
+  Detected Campaigns : 9
+
+  Completeness : 100.00%  (of each real campaign's alerts, how many were grouped)
+  Purity       : 6.54%  (of each predicted campaign's alerts, how many are real)
+
+  Merges : 1  (predicted campaign mixes alerts from different real campaigns)
+
+================================================================================
+
+================================================================================
+APPENDIX: FALSE POSITIVE DETAILS
+================================================================================
+Total False Positives: 18
+
+  • n2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f8 | Anomalous outbound data transfer volume | source=Darktrace | date=2024-12-03T06:23:26Z | status=false_positive | reason=Darktrace-detected outbound data transfer tied to DR-SYNC-01 — operational DR activity with no linkage to suspicious SMB.
+  • 26385fa8-46b2-554c-a4e4-5f3e180fe1e5 | Backup job completed with warnings (Tier-2-Apps) | source=Veeam Backup & Replication | date=2024-12-06T20:27:50Z | status=false_positive | reason=Operational Veeam Backup & Replication snapshot-consolidation warning for VM-APP-DB-04 and VM-APP-WEB-09. Investigation found no IOCs, no observable overlap with existing campaigns, and this is an isolated Veeam job run. Recommended to archive Veeam job logs and collect host/ESXi storage metrics and EDR logs; closing as operational/false positive.
+  • 3cb970a5-0dcc-5862-ac85-cff8838f382f | TLS certificate expiring in 14 days for internal application | source=Qualys VMDR | date=2024-12-08T05:59:47Z | status=false_positive | reason=Isolated Qualys VMDR finding for TLS certificate expiry on app.corp.local. Different host/observable from the seed and no overlap with existing campaigns; classify as maintenance (certificate renewal) rather than an incident.
+  • n5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a1 | File upload to cloud storage platform detected | source=Netskope | date=2024-12-10T08:34:42Z | status=false_positive | reason=Netskope DLP alert for onedrive.corp.local (user r.nunes) lacks source/session/host/file-hash artifacts and has no observable overlap with other alerts. Triage as informational pending Netskope session logs — not part of a confirmed exfiltration campaign.
+  • n4b5c6d7-e8f9-a0b1-c2d3-e4f5a6b7c8d9 | PowerShell launching from non-standard directory | source=Microsoft Defender for Endpoint | date=2024-12-10T12:01:19Z | status=false_positive | reason=Triage: insufficient evidence of compromise. Activity aligns with known admin automation/scheduled tasks (NightlyMaintenance) and Tanium/SCCM distribution patterns; svc_tanium only observed on this alert and no matching malicious hashes or lateral auths were found. Recommend targeted EDR/auth/network pulls (process tree, file hashes/signatures for C:\Users\Public\Tools\* and C:\ProgramData\Tanium\stage.ps1, svc_tanium auth logs, DNS/proxy for artifacts.corp.local) and escalate only if those show unsigned/unknown scripts, identical malicious hashes, or unexpected lateral auths by svc_tanium.
+  • n7c8d9e0-f1a2-b3c4-d5e6-f7a8b9c0d1e3 | RDP and WinRM connection probing detected | source=Rapid7 InsightVM | date=2024-12-11T14:31:20Z | status=false_positive | reason=Rapid7 InsightVM RDP/WinRM probing on DC-01 — likely authorized scanning/probing; no corroborating malicious activity.
+  • c47d985d-51f7-5e17-9da8-1d7178b7f6fe | Inbound connection blocked by sanctioned-country geo-rule | source=Cisco Secure Firewall | date=2024-12-25T09:37:42Z | status=false_positive | reason=Isolated inbound block from sanctioned-country (203.0.113.42); no linkage to internal alerts after correlation — treated as noise.
+  • n6d7e8f9-a0b1-c2d3-e4f5-a6b7c8d9e0f1 | PowerShell with download cradle pattern | source=Microsoft Defender for Endpoint | date=2024-12-31T12:03:43Z | status=false_positive | reason=PowerShell download-cradle to internal artifacts repo by svc_softdist matches software distribution automation and does not share observables with the APP-SRV-12 PsExec-style alert; mark as false positive.
+  • n4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f9 | Privileged action by service principal | source=Okta | date=2025-01-02T08:25:29Z | status=false_positive | reason=Okta privileged action by service principal (okta-terraform-runner) appears to be expected infrastructure/CI activity and is unrelated to the APP-SRV-12 PsExec-style alert; mark as false positive.
+  • n1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c7 | PowerShell remoting (WinRM) inbound execution | source=Microsoft Defender for Endpoint | date=2025-01-07T08:02:38Z | status=false_positive | reason=PowerShell WinRM activity appears to be authorized build/deploy automation (svc_deploy, different source IP and host) and does not share observables with the PsExec-style APP-SRV-12 alert; mark as false positive for this investigation.
+  • n9e0f1a2-b3c4-d5e6-f7a8-b9c0d1e2f3a5 | Container image vulnerability detected | source=Rapid7 InsightVM | date=2025-01-07T08:24:53Z | status=false_positive | reason=Container image vulnerability (Rapid7) — vulnerability management finding, not an incident.
+  • n4f5a6b7-c8d9-e0f1-a2b3-c4d5e6f7a8b0 | First-seen external destination for managed device | source=Darktrace | date=2025-01-09T01:48:56Z | status=false_positive | reason=Darktrace first-seen external destination for DR-SYNC-03; appears operational and unrelated to scanner/SMB incident.
+  • n8d9e0f1-a2b3-c4d5-e6f7-a8b9c0d1e2f4 | Asset out-of-scope: unmanaged host discovered | source=Rapid7 InsightVM | date=2025-01-22T18:55:51Z | status=false_positive | reason=Asset discovery/unmanaged host alert from InsightVM — asset management issue, not an active threat.
+  • n1e2f3a4-b5c6-d7e8-f9a0-b1c2d3e4f5a6 | End-of-life software detected | source=Qualys VMDR | date=2025-01-29T02:31:37Z | status=false_positive | reason=Isolated Qualys VMDR vulnerability (OpenSSL 1.0.2 EOL) on WEB-PRD-07. No related alerts, no exploitation or lateral movement indicators. Treat as a vulnerability management / patching task (not an active security incident). Remediate by upgrading OpenSSL and rescan.
+  • n0f1a2b3-c4d5-e6f7-a8b9-c0d1e2f3a4b6 | Insecure default configuration on application server | source=Rapid7 InsightVM | date=2025-02-02T20:44:17Z | status=false_positive | reason=InsightVM vulnerability finding (insecure default config); not an active incident — tracked in vuln management.
+  • n9a0b1c2-d3e4-f5a6-b7c8-d9e0f1a2b3c4 | High-volume outbound data transfer detected | source=Veeam Backup & Replication | date=2025-02-19T03:51:49Z | status=false_positive | reason=High-volume outbound transfer by Veeam backup (172.18.40.22) — backup activity, operational and not linked to malicious activity.
+  • 070f26cd-2ce7-5c25-9e51-953d96193ba6 | DNS query to sinkholed domain (legacy malware family) | source=Cisco Umbrella | date=2025-02-21T14:17:08Z | status=false_positive | reason=Umbrella sinkhole DNS alert is isolated to host IT-LT-007 and uses a different domain (ek-traffic-stats.com). No overlap with the Netskope DLP alerts; mark as separate endpoint remediation task and not part of any cloud-exfiltration campaign.
+  • n0d1e2f3-a4b5-c6d7-e8f9-a0b1c2d3e4f5 | CIS benchmark policy failure on Windows host | source=Qualys VMDR | date=2025-02-23T13:56:48Z | status=false_positive | reason=Qualys VMDR CIS benchmark policy failure; operational/non-security compliance finding tracked in vulnerability management (not an incident). Marking as false positive for security triage.

@@ -1,0 +1,14 @@
+#ai agents files
+thehive_mockup_alerts/
+.DS_Store
+.claude/
+.venv/
+.cursor/
+.dataset_release/
+
+# Python build & cache artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/

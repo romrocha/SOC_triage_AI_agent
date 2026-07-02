@@ -1,0 +1,961 @@
+16:51:46 INFO  [batch] Init | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951 | already_associated=0
+16:51:46 INFO  [select_seeds] Enter | 0 already associated
+16:51:47 INFO  [select_seeds] list_unprocessed_summary -> 
+16:51:50 INFO  [select_seeds] find_similar_cluster -> 
+16:51:57 INFO  [select_seeds] submit_selected_seeds -> 
+16:51:59 INFO  [select_seeds] Selected 3 seeds: n1e2f3a4-b5c,n4b5c6d7-e8f,n0d1e2f3-a4b
+16:51:59 INFO  ============================================================
+16:51:59 INFO  Investigation 1 | seeds: n1e2f3a4-b5c,n4b5c6d7-e8f,n0d1e2f3-a4b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:51:59 INFO  [investigate] Enter | loop=0 | seeds=n1e2f3a4-b5c,n4b5c6d7-e8f,n0d1e2f3-a4b
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+16:52:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+16:52:08 INFO  [investigate] search_similar_alerts(q='') -> 20 results
+16:52:13 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+16:52:20 INFO  [correlate] Enter | loop=1
+16:52:44 INFO  [correlate] compute_time_delta -> span=? days
+16:52:44 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:52:48 INFO  [correlate] ready_to_decide -> 
+16:52:51 INFO  [route] correlate -> decide (ready_to_decide)
+16:52:51 INFO  [decide] Enter
+16:53:00 INFO  [decide] mark_false_positive() -> 
+16:53:00 INFO  [decide] mark_false_positive() -> 
+16:53:00 INFO  [decide] mark_false_positive() -> 
+16:53:00 INFO  [decide] mark_false_positive() -> 
+16:53:00 INFO  [decide] mark_false_positive() -> 
+16:53:05 INFO  [decide] create_campaign(0 alerts) -> 
+16:53:09 INFO  [decide] mark_false_positive() -> 
+16:53:09 INFO  [decide] mark_false_positive() -> 
+16:53:09 INFO  [decide] mark_false_positive() -> 
+16:53:09 INFO  [decide] mark_false_positive() -> 
+16:53:09 INFO  [decide] mark_false_positive() -> 
+16:53:12 INFO  Investigation 1 done | 73.7s | 5 FP + 7 campaign | action=?
+16:53:13 INFO  [select_seeds] Enter | 12 already associated
+16:53:13 INFO  [select_seeds] list_unprocessed_summary -> 
+16:53:15 INFO  [select_seeds] find_similar_cluster -> 
+16:53:20 INFO  [select_seeds] submit_selected_seeds -> 
+16:53:22 INFO  [select_seeds] Selected 1 seeds: d4e5b1f7-3f6
+16:53:22 INFO  ============================================================
+16:53:22 INFO  Investigation 2 | seeds: d4e5b1f7-3f6 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:53:22 INFO  [investigate] Enter | loop=0 | seeds=d4e5b1f7-3f6
+16:53:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:53:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 8 results
+16:53:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 7 results
+16:53:30 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:53:31 INFO  [investigate] search_similar_alerts(q='') -> 10 results
+16:53:40 INFO  [correlate] Enter | loop=1
+16:53:48 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:53:48 INFO  [correlate] compute_time_delta -> span=? days
+16:53:50 INFO  [correlate] ready_to_decide -> 
+16:53:52 INFO  [route] correlate -> decide (ready_to_decide)
+16:53:52 INFO  [decide] Enter
+16:53:56 INFO  [decide] create_campaign(0 alerts) -> 
+16:53:56 INFO  [decide] mark_false_positive() -> 
+16:54:00 INFO  Investigation 2 done | 38.5s | 1 FP + 4 campaign | action=?
+16:54:00 INFO  [select_seeds] Enter | 16 already associated
+16:54:01 INFO  [select_seeds] list_unprocessed_summary -> 
+16:54:02 INFO  [select_seeds] find_similar_cluster -> 
+16:54:03 INFO  [select_seeds] submit_selected_seeds -> 
+16:54:04 INFO  [select_seeds] Selected 1 seeds: b8c9f5d1-7d0
+16:54:04 INFO  ============================================================
+16:54:04 INFO  Investigation 3 | seeds: b8c9f5d1-7d0 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:54:04 INFO  [investigate] Enter | loop=0 | seeds=b8c9f5d1-7d0
+16:54:05 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:54:05 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 3 results
+16:54:08 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 6 results
+16:54:13 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:54:16 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 3 results
+16:54:33 INFO  [correlate] Enter | loop=1
+16:54:49 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:54:49 INFO  [correlate] compute_time_delta -> span=? days
+16:54:51 INFO  [correlate] ready_to_decide -> 
+16:54:54 INFO  [route] correlate -> decide (ready_to_decide)
+16:54:54 INFO  [decide] Enter
+16:54:59 INFO  [decide] create_campaign(0 alerts) -> 
+16:54:59 INFO  [decide] mark_false_positive() -> 
+16:55:01 INFO  Investigation 3 done | 57.1s | 1 FP + 9 campaign | action=?
+16:55:01 INFO  [select_seeds] Enter | 25 already associated
+16:55:02 INFO  [select_seeds] list_unprocessed_summary -> 
+16:55:04 INFO  [select_seeds] find_similar_cluster -> 
+16:55:07 INFO  [select_seeds] submit_selected_seeds -> 
+16:55:09 INFO  [select_seeds] Selected 1 seeds: c5d6a2e8-4e7
+16:55:09 INFO  ============================================================
+16:55:09 INFO  Investigation 4 | seeds: c5d6a2e8-4e7 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:55:09 INFO  [investigate] Enter | loop=0 | seeds=c5d6a2e8-4e7
+16:55:10 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:55:10 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:55:11 INFO  [investigate] search_similar_alerts(q='') -> 5 results
+16:55:12 INFO  [investigate] fetch_campaign_alerts() -> 9 alerts
+16:55:17 INFO  [correlate] Enter | loop=1
+16:55:33 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:55:33 INFO  [correlate] compute_time_delta -> span=? days
+16:55:35 INFO  [correlate] ready_to_decide -> 
+16:55:37 INFO  [route] correlate -> decide (ready_to_decide)
+16:55:37 INFO  [decide] Enter
+16:55:41 INFO  [decide] mark_false_positive() -> 
+16:55:41 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:55:43 INFO  Investigation 4 done | 34.3s | 0 FP + 0 campaign | action=?
+16:55:43 INFO  [select_seeds] Enter | 26 already associated
+16:55:43 INFO  [select_seeds] list_unprocessed_summary -> 
+16:55:45 INFO  [select_seeds] find_similar_cluster -> 
+16:55:46 INFO  [select_seeds] submit_selected_seeds -> 
+16:55:47 INFO  [select_seeds] Selected 1 seeds: 5e6f7a8b-9c0
+16:55:47 INFO  ============================================================
+16:55:47 INFO  Investigation 5 | seeds: 5e6f7a8b-9c0 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:55:47 INFO  [investigate] Enter | loop=0 | seeds=5e6f7a8b-9c0
+16:55:49 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:55:49 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:55:49 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 9 results
+16:55:51 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:55:57 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 10 results
+16:56:06 INFO  [correlate] Enter | loop=1
+16:56:15 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:56:15 INFO  [correlate] compute_time_delta -> span=? days
+16:56:17 INFO  [correlate] ready_to_decide -> 
+16:56:18 INFO  [route] correlate -> decide (ready_to_decide)
+16:56:18 INFO  [decide] Enter
+16:56:25 INFO  [decide] create_campaign(0 alerts) -> 
+16:56:25 INFO  [decide] mark_false_positive() -> 
+16:56:27 INFO  Investigation 5 done | 40.0s | 1 FP + 5 campaign | action=?
+16:56:27 INFO  [select_seeds] Enter | 31 already associated
+16:56:28 INFO  [select_seeds] list_unprocessed_summary -> 
+16:56:31 INFO  [select_seeds] submit_selected_seeds -> 
+16:56:32 INFO  [select_seeds] Selected 1 seeds: n5c6d7e8-f9a
+16:56:32 INFO  ============================================================
+16:56:32 INFO  Investigation 6 | seeds: n5c6d7e8-f9a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:56:32 INFO  [investigate] Enter | loop=0 | seeds=n5c6d7e8-f9a
+16:56:34 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+16:56:34 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:56:34 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:56:36 INFO  [investigate] search_similar_alerts(q='') -> 8 results
+16:56:47 INFO  [correlate] Enter | loop=1
+16:56:59 INFO  [correlate] compute_time_delta -> span=? days
+16:56:59 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:57:03 INFO  [correlate] ready_to_decide -> 
+16:57:05 INFO  [route] correlate -> decide (ready_to_decide)
+16:57:05 INFO  [decide] Enter
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:17 INFO  [decide] mark_false_positive() -> 
+16:57:18 INFO  Investigation 6 done | 46.5s | 8 FP + 0 campaign | action=?
+16:57:18 INFO  [select_seeds] Enter | 39 already associated
+16:57:19 INFO  [select_seeds] list_unprocessed_summary -> 
+16:57:21 INFO  [select_seeds] submit_selected_seeds -> 
+16:57:23 INFO  [select_seeds] Selected 1 seeds: 9c0d1e2f-3a4
+16:57:23 INFO  ============================================================
+16:57:23 INFO  Investigation 7 | seeds: 9c0d1e2f-3a4 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:57:23 INFO  [investigate] Enter | loop=0 | seeds=9c0d1e2f-3a4
+16:57:24 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:24 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:27 INFO  [correlate] Enter | loop=1
+16:57:33 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:57:36 INFO  [correlate] ready_to_decide -> 
+16:57:38 INFO  [route] correlate -> decide (ready_to_decide)
+16:57:38 INFO  [decide] Enter
+16:57:39 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:57:41 INFO  Investigation 7 done | 18.2s | 0 FP + 0 campaign | action=?
+16:57:41 INFO  [select_seeds] Enter | 40 already associated
+16:57:41 INFO  [select_seeds] list_unprocessed_summary -> 
+16:57:43 INFO  [select_seeds] find_similar_cluster -> 
+16:57:49 INFO  [select_seeds] submit_selected_seeds -> 
+16:57:50 INFO  [select_seeds] Selected 3 seeds: n3c4d5e6-f7a,n2b3c4d5-e6f,n4d5e6f7-a8b
+16:57:50 INFO  ============================================================
+16:57:50 INFO  Investigation 8 | seeds: n3c4d5e6-f7a,n2b3c4d5-e6f,n4d5e6f7-a8b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:57:50 INFO  [investigate] Enter | loop=0 | seeds=n3c4d5e6-f7a,n2b3c4d5-e6f,n4d5e6f7-a8b
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:57:54 INFO  [investigate] search_similar_alerts(q='') -> 5 results
+16:58:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:01 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+16:58:03 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:05 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+16:58:14 INFO  [correlate] Enter | loop=1
+16:58:19 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:58:19 INFO  [correlate] compute_time_delta -> span=? days
+16:58:23 INFO  [correlate] ready_to_decide -> 
+16:58:25 INFO  [route] correlate -> decide (ready_to_decide)
+16:58:25 INFO  [decide] Enter
+16:58:28 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:58:28 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:58:28 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:58:30 INFO  Investigation 8 done | 40.3s | 0 FP + 0 campaign | action=?
+16:58:30 INFO  [select_seeds] Enter | 43 already associated
+16:58:31 INFO  [select_seeds] list_unprocessed_summary -> 
+16:58:32 INFO  [select_seeds] find_similar_cluster -> 
+16:58:40 INFO  [select_seeds] submit_selected_seeds -> 
+16:58:42 INFO  [select_seeds] Selected 3 seeds: a1f2e8d4-9c3,n5a6b7c8-d9e,n7c8d9e0-f1a
+16:58:42 INFO  ============================================================
+16:58:42 INFO  Investigation 9 | seeds: a1f2e8d4-9c3,n5a6b7c8-d9e,n7c8d9e0-f1a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:58:42 INFO  [investigate] Enter | loop=0 | seeds=a1f2e8d4-9c3,n5a6b7c8-d9e,n7c8d9e0-f1a
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:45 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+16:58:47 INFO  [investigate] search_similar_alerts(q='') -> 8 results
+16:58:47 INFO  [investigate] search_similar_alerts(q='') -> 6 results
+16:58:47 INFO  [investigate] search_similar_alerts(q='') -> 7 results
+16:58:48 INFO  [investigate] fetch_campaign_alerts() -> 4 alerts
+16:58:54 INFO  [correlate] Enter | loop=1
+16:59:14 INFO  [correlate] compute_time_delta -> span=? days
+16:59:14 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:59:16 INFO  [correlate] ready_to_decide -> 
+16:59:18 INFO  [route] correlate -> decide (ready_to_decide)
+16:59:18 INFO  [decide] Enter
+16:59:22 INFO  [decide] mark_false_positive() -> 
+16:59:22 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+16:59:22 INFO  [decide] mark_false_positive() -> 
+16:59:22 INFO  [decide] mark_false_positive() -> 
+16:59:26 INFO  Investigation 9 done | 43.6s | 2 FP + 0 campaign | action=?
+16:59:26 INFO  [select_seeds] Enter | 46 already associated
+16:59:27 INFO  [select_seeds] list_unprocessed_summary -> 
+16:59:29 INFO  [select_seeds] find_similar_cluster -> 
+16:59:31 INFO  [select_seeds] submit_selected_seeds -> 
+16:59:32 INFO  [select_seeds] Selected 1 seeds: 2f3a4b5c-6d7
+16:59:32 INFO  ============================================================
+16:59:32 INFO  Investigation 10 | seeds: 2f3a4b5c-6d7 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+16:59:32 INFO  [investigate] Enter | loop=0 | seeds=2f3a4b5c-6d7
+16:59:34 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 5 results
+16:59:34 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 7 results
+16:59:35 INFO  [investigate] fetch_campaign_alerts() -> 6 alerts
+16:59:41 INFO  [correlate] Enter | loop=1
+16:59:55 INFO  [correlate] compute_time_delta -> span=? days
+16:59:55 INFO  [correlate] validate_shared_entities -> 0 shared entities
+16:59:58 INFO  [correlate] ready_to_decide -> 
+17:00:00 INFO  [route] correlate -> decide (ready_to_decide)
+17:00:00 INFO  [decide] Enter
+17:00:03 INFO  [decide] mark_false_positive() -> 
+17:00:03 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:00:06 INFO  Investigation 10 done | 33.3s | 0 FP + 0 campaign | action=?
+17:00:06 INFO  [select_seeds] Enter | 47 already associated
+17:00:06 INFO  [select_seeds] list_unprocessed_summary -> 
+17:00:08 INFO  [select_seeds] find_similar_cluster -> 
+17:00:09 INFO  [select_seeds] submit_selected_seeds -> 
+17:00:10 INFO  [select_seeds] Selected 1 seeds: 4b5c6d7e-8f9
+17:00:10 INFO  ============================================================
+17:00:10 INFO  Investigation 11 | seeds: 4b5c6d7e-8f9 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:00:10 INFO  [investigate] Enter | loop=0 | seeds=4b5c6d7e-8f9
+17:00:12 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:00:12 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 5 results
+17:00:13 INFO  [investigate] fetch_campaign_alerts() -> 7 alerts
+17:00:18 INFO  [correlate] Enter | loop=1
+17:00:33 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:00:33 INFO  [correlate] compute_time_delta -> span=? days
+17:00:37 INFO  [correlate] ready_to_decide -> 
+17:00:41 INFO  [route] correlate -> decide (ready_to_decide)
+17:00:41 INFO  [decide] Enter
+17:00:46 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:00:46 INFO  [decide] mark_false_positive() -> 
+17:00:46 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:00:48 INFO  Investigation 11 done | 37.6s | 0 FP + 0 campaign | action=?
+17:00:48 INFO  [select_seeds] Enter | 48 already associated
+17:00:48 INFO  [select_seeds] list_unprocessed_summary -> 
+17:00:51 INFO  [select_seeds] find_similar_cluster -> 
+17:00:56 INFO  [select_seeds] submit_selected_seeds -> 
+17:00:57 INFO  [select_seeds] Selected 2 seeds: n2b3c4d5-e6f,n7a8b9c0-d1e
+17:00:57 INFO  ============================================================
+17:00:57 INFO  Investigation 12 | seeds: n2b3c4d5-e6f,n7a8b9c0-d1e | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:00:57 INFO  [investigate] Enter | loop=0 | seeds=n2b3c4d5-e6f,n7a8b9c0-d1e
+17:00:58 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:00:58 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:01:00 INFO  [investigate] search_similar_alerts(q='') -> 7 results
+17:01:10 INFO  [correlate] Enter | loop=1
+17:01:18 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:01:23 INFO  [correlate] ready_to_decide -> 
+17:01:24 INFO  [route] correlate -> decide (ready_to_decide)
+17:01:24 INFO  [decide] Enter
+17:01:39 INFO  [decide] create_campaign(0 alerts) -> 
+17:01:39 INFO  [decide] mark_false_positive() -> 
+17:01:39 INFO  [decide] mark_false_positive() -> 
+17:01:39 INFO  [decide] mark_false_positive() -> 
+17:01:39 INFO  [decide] mark_false_positive() -> 
+17:01:39 INFO  [decide] mark_false_positive() -> 
+17:01:44 INFO  Investigation 12 done | 47.2s | 5 FP + 2 campaign | action=?
+17:01:44 INFO  [select_seeds] Enter | 55 already associated
+17:01:45 INFO  [select_seeds] list_unprocessed_summary -> 
+17:01:46 INFO  [select_seeds] find_similar_cluster -> 
+17:01:49 INFO  [select_seeds] submit_selected_seeds -> 
+17:01:50 INFO  [select_seeds] Selected 1 seeds: c3f4a0e6-2e5
+17:01:50 INFO  ============================================================
+17:01:50 INFO  Investigation 13 | seeds: c3f4a0e6-2e5 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:01:50 INFO  [investigate] Enter | loop=0 | seeds=c3f4a0e6-2e5
+17:01:52 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:01:52 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:01:53 INFO  [investigate] fetch_campaign_alerts() -> 5 alerts
+17:01:58 INFO  [correlate] Enter | loop=1
+17:02:03 INFO  [correlate] ready_to_decide -> 
+17:02:05 INFO  [route] correlate -> decide (ready_to_decide)
+17:02:05 INFO  [decide] Enter
+17:02:07 INFO  [decide] mark_false_positive() -> 
+17:02:07 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:02:10 INFO  Investigation 13 done | 20.0s | 0 FP + 0 campaign | action=?
+17:02:10 INFO  [select_seeds] Enter | 56 already associated
+17:02:11 INFO  [select_seeds] list_unprocessed_summary -> 
+17:02:12 INFO  [select_seeds] find_similar_cluster -> 
+17:02:13 INFO  [select_seeds] submit_selected_seeds -> 
+17:02:14 INFO  [select_seeds] Selected 1 seeds: 5c6d7e8f-9a0
+17:02:14 INFO  ============================================================
+17:02:14 INFO  Investigation 14 | seeds: 5c6d7e8f-9a0 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:02:14 INFO  [investigate] Enter | loop=0 | seeds=5c6d7e8f-9a0
+17:02:16 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 4 results
+17:02:16 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 6 results
+17:02:17 INFO  [investigate] fetch_campaign_alerts() -> 8 alerts
+17:02:23 INFO  [correlate] Enter | loop=1
+17:02:33 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:02:42 INFO  [correlate] compute_time_delta -> span=? days
+17:02:44 INFO  [correlate] ready_to_decide -> 
+17:02:46 INFO  [route] correlate -> decide (ready_to_decide)
+17:02:46 INFO  [decide] Enter
+17:02:49 INFO  [decide] mark_false_positive() -> 
+17:02:49 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:02:52 INFO  Investigation 14 done | 37.4s | 0 FP + 0 campaign | action=?
+17:02:52 INFO  [select_seeds] Enter | 57 already associated
+17:02:52 INFO  [select_seeds] list_unprocessed_summary -> 
+17:02:55 INFO  [select_seeds] find_similar_cluster -> 
+17:02:58 INFO  [select_seeds] submit_selected_seeds -> 
+17:02:59 INFO  [select_seeds] Selected 1 seeds: n8b9c0d1-e2f
+17:02:59 INFO  ============================================================
+17:02:59 INFO  Investigation 15 | seeds: n8b9c0d1-e2f | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:02:59 INFO  [investigate] Enter | loop=0 | seeds=n8b9c0d1-e2f
+17:03:01 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:01 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:01 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:01 INFO  [investigate] fetch_campaign_alerts() -> 7 alerts
+17:03:05 INFO  [correlate] Enter | loop=1
+17:03:14 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:03:14 INFO  [correlate] compute_time_delta -> span=? days
+17:03:17 INFO  [correlate] ready_to_decide -> 
+17:03:19 INFO  [route] correlate -> decide (ready_to_decide)
+17:03:19 INFO  [decide] Enter
+17:03:21 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:03:22 INFO  Investigation 15 done | 23.3s | 0 FP + 0 campaign | action=?
+17:03:22 INFO  [select_seeds] Enter | 58 already associated
+17:03:23 INFO  [select_seeds] list_unprocessed_summary -> 
+17:03:25 INFO  [select_seeds] find_similar_cluster -> 
+17:03:36 INFO  [select_seeds] submit_selected_seeds -> 
+17:03:40 INFO  [select_seeds] Selected 3 seeds: n7a8b9c0-d1e,n5e6f7a8-b9c,n4d5e6f7-a8b
+17:03:40 INFO  ============================================================
+17:03:40 INFO  Investigation 16 | seeds: n7a8b9c0-d1e,n5e6f7a8-b9c,n4d5e6f7-a8b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:03:40 INFO  [investigate] Enter | loop=0 | seeds=n7a8b9c0-d1e,n5e6f7a8-b9c,n4d5e6f7-a8b
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:03:42 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:03:46 INFO  [correlate] Enter | loop=1
+17:03:53 INFO  [correlate] ready_to_decide -> 
+17:03:54 INFO  [route] correlate -> decide (ready_to_decide)
+17:03:54 INFO  [decide] Enter
+17:03:58 INFO  [decide] mark_false_positive() -> 
+17:03:58 INFO  [decide] mark_false_positive() -> 
+17:03:58 INFO  [decide] mark_false_positive() -> 
+17:03:59 INFO  Investigation 16 done | 19.4s | 3 FP + 0 campaign | action=?
+17:03:59 INFO  [select_seeds] Enter | 61 already associated
+17:03:59 INFO  [select_seeds] list_unprocessed_summary -> 
+17:04:01 INFO  [select_seeds] find_similar_cluster -> 
+17:04:03 INFO  [select_seeds] submit_selected_seeds -> 
+17:04:04 INFO  [select_seeds] Selected 1 seeds: 6f7a8b9c-0d1
+17:04:04 INFO  ============================================================
+17:04:04 INFO  Investigation 17 | seeds: 6f7a8b9c-0d1 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:04:04 INFO  [investigate] Enter | loop=0 | seeds=6f7a8b9c-0d1
+17:04:05 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:04:05 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 5 results
+17:04:06 INFO  [investigate] fetch_campaign_alerts() -> 9 alerts
+17:04:11 INFO  [correlate] Enter | loop=1
+17:04:20 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:04:28 INFO  [correlate] compute_time_delta -> span=? days
+17:04:31 INFO  [correlate] ready_to_decide -> 
+17:04:34 INFO  [route] correlate -> decide (ready_to_decide)
+17:04:34 INFO  [decide] Enter
+17:04:37 INFO  [decide] mark_false_positive() -> 
+17:04:37 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:04:39 INFO  Investigation 17 done | 35.4s | 0 FP + 0 campaign | action=?
+17:04:39 INFO  [select_seeds] Enter | 62 already associated
+17:04:40 INFO  [select_seeds] list_unprocessed_summary -> 
+17:04:42 INFO  [select_seeds] find_similar_cluster -> 
+17:04:45 INFO  [select_seeds] submit_selected_seeds -> 
+17:04:46 INFO  [select_seeds] Selected 1 seeds: n5a6b7c8-d9e
+17:04:46 INFO  ============================================================
+17:04:46 INFO  Investigation 18 | seeds: n5a6b7c8-d9e | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:04:46 INFO  [investigate] Enter | loop=0 | seeds=n5a6b7c8-d9e
+17:04:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:04:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:04:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:04:50 INFO  [correlate] Enter | loop=1
+17:04:53 INFO  [route] correlate -> investigate (needs more data)
+17:04:53 INFO  [investigate] Enter | loop=1 | seeds=n5a6b7c8-d9e
+17:04:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:04:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:04:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:04:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:04:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:04:56 INFO  [investigate] search_similar_alerts(q='') -> 2 results
+17:04:59 INFO  [investigate] fetch_campaign_alerts() -> 2 alerts
+17:04:59 INFO  [investigate] fetch_campaign_alerts() -> 8 alerts
+17:05:05 INFO  [correlate] Enter | loop=2
+17:05:31 INFO  [correlate] compute_time_delta -> span=? days
+17:05:31 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:05:33 INFO  [correlate] ready_to_decide -> 
+17:05:34 INFO  [route] correlate -> decide (ready_to_decide)
+17:05:34 INFO  [decide] Enter
+17:05:38 INFO  [decide] mark_false_positive() -> 
+17:05:38 INFO  [decide] mark_false_positive() -> 
+17:05:38 INFO  [decide] mark_false_positive() -> 
+17:05:41 INFO  Investigation 18 done | 54.4s | 3 FP + 0 campaign | action=?
+17:05:41 INFO  [select_seeds] Enter | 65 already associated
+17:05:41 INFO  [select_seeds] list_unprocessed_summary -> 
+17:05:43 INFO  [select_seeds] find_similar_cluster -> 
+17:05:47 INFO  [select_seeds] submit_selected_seeds -> 
+17:05:48 INFO  [select_seeds] Selected 1 seeds: n2b3c4d5-e6f
+17:05:48 INFO  ============================================================
+17:05:48 INFO  Investigation 19 | seeds: n2b3c4d5-e6f | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:05:48 INFO  [investigate] Enter | loop=0 | seeds=n2b3c4d5-e6f
+17:05:50 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:05:50 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:05:50 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:05:51 INFO  [investigate] search_similar_alerts(q='') -> 3 results
+17:05:58 INFO  [correlate] Enter | loop=1
+17:06:17 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:06:17 INFO  [correlate] compute_time_delta -> span=? days
+17:06:19 INFO  [correlate] ready_to_decide -> 
+17:06:20 INFO  [route] correlate -> decide (ready_to_decide)
+17:06:20 INFO  [decide] Enter
+17:06:23 INFO  [decide] mark_false_positive() -> 
+17:06:23 INFO  [decide] mark_false_positive() -> 
+17:06:23 INFO  [decide] mark_false_positive() -> 
+17:06:25 INFO  Investigation 19 done | 36.9s | 3 FP + 0 campaign | action=?
+17:06:25 INFO  [select_seeds] Enter | 68 already associated
+17:06:26 INFO  [select_seeds] list_unprocessed_summary -> 
+17:06:28 INFO  [select_seeds] submit_selected_seeds -> 
+17:06:29 INFO  [select_seeds] Selected 1 seeds: 450a2e03-066
+17:06:29 INFO  ============================================================
+17:06:29 INFO  Investigation 20 | seeds: 450a2e03-066 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:06:29 INFO  [investigate] Enter | loop=0 | seeds=450a2e03-066
+17:06:30 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:06:30 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:06:34 INFO  [correlate] Enter | loop=1
+17:06:39 INFO  [route] correlate -> investigate (needs more data)
+17:06:39 INFO  [investigate] Enter | loop=1 | seeds=450a2e03-066
+17:06:40 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:06:40 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:06:44 INFO  [correlate] Enter | loop=2
+17:06:50 INFO  [correlate] ready_to_decide -> 
+17:06:52 INFO  [route] correlate -> decide (ready_to_decide)
+17:06:52 INFO  [decide] Enter
+17:06:53 INFO  [decide] mark_false_positive() -> 
+17:06:55 INFO  Investigation 20 done | 26.1s | 1 FP + 0 campaign | action=?
+17:06:55 INFO  [select_seeds] Enter | 69 already associated
+17:06:55 INFO  [select_seeds] list_unprocessed_summary -> 
+17:06:57 INFO  [select_seeds] find_similar_cluster -> 
+17:06:58 INFO  [select_seeds] submit_selected_seeds -> 
+17:07:01 INFO  [select_seeds] Selected 1 seeds: n8d9e0f1-a2b
+17:07:01 INFO  ============================================================
+17:07:01 INFO  Investigation 21 | seeds: n8d9e0f1-a2b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:07:01 INFO  [investigate] Enter | loop=0 | seeds=n8d9e0f1-a2b
+17:07:03 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:03 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:04 INFO  [investigate] search_similar_alerts(q='') -> 4 results
+17:07:06 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:07 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:12 INFO  [correlate] Enter | loop=1
+17:07:38 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:07:38 INFO  [correlate] compute_time_delta -> span=? days
+17:07:40 INFO  [correlate] ready_to_decide -> 
+17:07:41 INFO  [route] correlate -> decide (ready_to_decide)
+17:07:41 INFO  [decide] Enter
+17:07:43 INFO  [decide] mark_false_positive() -> 
+17:07:43 INFO  [decide] mark_false_positive() -> 
+17:07:45 INFO  Investigation 21 done | 43.1s | 2 FP + 0 campaign | action=?
+17:07:45 INFO  [select_seeds] Enter | 71 already associated
+17:07:45 INFO  [select_seeds] list_unprocessed_summary -> 
+17:07:47 INFO  [select_seeds] find_similar_cluster -> 
+17:07:49 INFO  [select_seeds] submit_selected_seeds -> 
+17:07:50 INFO  [select_seeds] Selected 1 seeds: n4f5a6b7-c8d
+17:07:50 INFO  ============================================================
+17:07:50 INFO  Investigation 22 | seeds: n4f5a6b7-c8d | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:07:50 INFO  [investigate] Enter | loop=0 | seeds=n4f5a6b7-c8d
+17:07:52 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:52 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:52 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:07:55 INFO  [correlate] Enter | loop=1
+17:08:07 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:08:07 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:08:11 INFO  [correlate] ready_to_decide -> 
+17:08:13 INFO  [route] correlate -> decide (ready_to_decide)
+17:08:13 INFO  [decide] Enter
+17:08:15 INFO  [decide] mark_false_positive() -> 
+17:08:16 INFO  Investigation 22 done | 26.2s | 1 FP + 0 campaign | action=?
+17:08:16 INFO  [select_seeds] Enter | 72 already associated
+17:08:17 INFO  [select_seeds] list_unprocessed_summary -> 
+17:08:18 INFO  [select_seeds] find_similar_cluster -> 
+17:08:20 INFO  [select_seeds] submit_selected_seeds -> 
+17:08:21 INFO  [select_seeds] Selected 1 seeds: n0f1a2b3-c4d
+17:08:21 INFO  ============================================================
+17:08:21 INFO  Investigation 23 | seeds: n0f1a2b3-c4d | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:08:21 INFO  [investigate] Enter | loop=0 | seeds=n0f1a2b3-c4d
+17:08:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:08:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:08:23 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:08:24 INFO  [investigate] search_similar_alerts(q='') -> 4 results
+17:08:27 INFO  [investigate] fetch_campaign_alerts() -> 6 alerts
+17:08:27 INFO  [investigate] fetch_campaign_alerts() -> 8 alerts
+17:08:34 INFO  [correlate] Enter | loop=1
+17:08:53 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:08:57 INFO  [correlate] ready_to_decide -> 
+17:08:58 INFO  [route] correlate -> decide (ready_to_decide)
+17:08:58 INFO  [decide] Enter
+17:08:59 INFO  [decide] mark_false_positive() -> 
+17:09:00 INFO  Investigation 23 done | 39.1s | 1 FP + 0 campaign | action=?
+17:09:00 INFO  [select_seeds] Enter | 73 already associated
+17:09:01 INFO  [select_seeds] list_unprocessed_summary -> 
+17:09:02 INFO  [select_seeds] find_similar_cluster -> 
+17:09:04 INFO  [select_seeds] submit_selected_seeds -> 
+17:09:05 INFO  [select_seeds] Selected 1 seeds: 1e2f3a4b-5c6
+17:09:05 INFO  ============================================================
+17:09:05 INFO  Investigation 24 | seeds: 1e2f3a4b-5c6 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:09:05 INFO  [investigate] Enter | loop=0 | seeds=1e2f3a4b-5c6
+17:09:07 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:09:07 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 4 results
+17:09:08 INFO  [investigate] fetch_campaign_alerts() -> 10 alerts
+17:09:13 INFO  [correlate] Enter | loop=1
+17:09:37 INFO  [correlate] compute_time_delta -> span=? days
+17:09:37 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:09:40 INFO  [correlate] ready_to_decide -> 
+17:09:43 INFO  [route] correlate -> decide (ready_to_decide)
+17:09:43 INFO  [decide] Enter
+17:09:45 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:09:45 INFO  [decide] mark_false_positive() -> 
+17:09:48 INFO  Investigation 24 done | 42.3s | 1 FP + 0 campaign | action=?
+17:09:48 INFO  [select_seeds] Enter | 75 already associated
+17:09:48 INFO  [select_seeds] list_unprocessed_summary -> 
+17:09:50 INFO  [select_seeds] find_similar_cluster -> 
+17:09:53 INFO  [select_seeds] submit_selected_seeds -> 
+17:09:54 INFO  [select_seeds] Selected 1 seeds: n6d7e8f9-a0b
+17:09:54 INFO  ============================================================
+17:09:54 INFO  Investigation 25 | seeds: n6d7e8f9-a0b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:09:54 INFO  [investigate] Enter | loop=0 | seeds=n6d7e8f9-a0b
+17:09:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:09:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:09:55 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:09:57 INFO  [investigate] search_similar_alerts(q='') -> 1 results
+17:10:01 INFO  [correlate] Enter | loop=1
+17:10:09 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:10:17 INFO  [correlate] ready_to_decide -> 
+17:10:18 INFO  [route] correlate -> decide (ready_to_decide)
+17:10:18 INFO  [decide] Enter
+17:10:20 INFO  [decide] mark_false_positive() -> 
+17:10:21 INFO  Investigation 25 done | 27.8s | 1 FP + 0 campaign | action=?
+17:10:21 INFO  [select_seeds] Enter | 76 already associated
+17:10:22 INFO  [select_seeds] list_unprocessed_summary -> 
+17:10:24 INFO  [select_seeds] find_similar_cluster -> 
+17:10:33 INFO  [select_seeds] submit_selected_seeds -> 
+17:10:35 INFO  [select_seeds] Selected 3 seeds: 7a8b9c0d-1e2,8b9c0d1e-2f3,0d1e2f3a-4b5
+17:10:35 INFO  ============================================================
+17:10:35 INFO  Investigation 26 | seeds: 7a8b9c0d-1e2,8b9c0d1e-2f3,0d1e2f3a-4b5 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:10:35 INFO  [investigate] Enter | loop=0 | seeds=7a8b9c0d-1e2,8b9c0d1e-2f3,0d1e2f3a-4b5
+17:10:37 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:10:37 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:10:37 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 3 results
+17:10:37 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 3 results
+17:10:38 INFO  [investigate] fetch_campaign_alerts() -> 0 alerts
+17:10:45 INFO  [correlate] Enter | loop=1
+17:11:02 INFO  [correlate] compute_time_delta -> span=? days
+17:11:02 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:11:05 INFO  [correlate] ready_to_decide -> 
+17:11:06 INFO  [route] correlate -> decide (ready_to_decide)
+17:11:06 INFO  [decide] Enter
+17:11:10 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:11:10 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:11:10 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:11:11 INFO  Investigation 26 done | 36.7s | 0 FP + 0 campaign | action=?
+17:11:11 INFO  [select_seeds] Enter | 79 already associated
+17:11:12 INFO  [select_seeds] list_unprocessed_summary -> 
+17:11:15 INFO  [select_seeds] submit_selected_seeds -> 
+17:11:17 INFO  [select_seeds] Selected 1 seeds: 3a4b5c6d-7e8
+17:11:17 INFO  ============================================================
+17:11:17 INFO  Investigation 27 | seeds: 3a4b5c6d-7e8 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:11:17 INFO  [investigate] Enter | loop=0 | seeds=3a4b5c6d-7e8
+17:11:18 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:18 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:19 INFO  [investigate] fetch_campaign_alerts() -> 0 alerts
+17:11:25 INFO  [correlate] Enter | loop=1
+17:11:31 INFO  [correlate] ready_to_decide -> 
+17:11:32 INFO  [route] correlate -> decide (ready_to_decide)
+17:11:32 INFO  [decide] Enter
+17:11:34 INFO  [decide] mark_false_positive() -> 
+17:11:34 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:11:36 INFO  Investigation 27 done | 19.7s | 0 FP + 0 campaign | action=?
+17:11:36 INFO  [select_seeds] Enter | 80 already associated
+17:11:37 INFO  [select_seeds] list_unprocessed_summary -> 
+17:11:39 INFO  [select_seeds] find_similar_cluster -> 
+17:11:49 INFO  [select_seeds] submit_selected_seeds -> 
+17:11:52 INFO  [select_seeds] Selected 3 seeds: n3e4f5a6-b7c,n0b1c2d3-e4f,n7c8d9e0-f1a
+17:11:52 INFO  ============================================================
+17:11:52 INFO  Investigation 28 | seeds: n3e4f5a6-b7c,n0b1c2d3-e4f,n7c8d9e0-f1a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:11:52 INFO  [investigate] Enter | loop=0 | seeds=n3e4f5a6-b7c,n0b1c2d3-e4f,n7c8d9e0-f1a
+17:11:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:53 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:54 INFO  [investigate] search_similar_alerts(q='') -> 4 results
+17:11:56 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:57 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:58 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:11:59 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:01 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:03 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:04 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:14 INFO  [correlate] Enter | loop=1
+17:12:17 INFO  [correlate] ready_to_decide -> 
+17:12:18 INFO  [route] correlate -> decide (ready_to_decide)
+17:12:18 INFO  [decide] Enter
+17:12:22 INFO  [decide] mark_false_positive() -> 
+17:12:22 INFO  [decide] mark_false_positive() -> 
+17:12:22 INFO  [decide] mark_false_positive() -> 
+17:12:25 INFO  Investigation 28 done | 33.2s | 3 FP + 0 campaign | action=?
+17:12:25 INFO  [select_seeds] Enter | 83 already associated
+17:12:25 INFO  [select_seeds] list_unprocessed_summary -> 
+17:12:28 INFO  [select_seeds] find_similar_cluster -> 
+17:12:31 INFO  [select_seeds] submit_selected_seeds -> 
+17:12:32 INFO  [select_seeds] Selected 1 seeds: n4d5e6f7-a8b
+17:12:32 INFO  ============================================================
+17:12:32 INFO  Investigation 29 | seeds: n4d5e6f7-a8b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:12:32 INFO  [investigate] Enter | loop=0 | seeds=n4d5e6f7-a8b
+17:12:33 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:12:33 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:12:34 INFO  [investigate] search_similar_alerts(q='') -> 2 results
+17:12:37 INFO  [correlate] Enter | loop=1
+17:13:23 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:13:23 INFO  [correlate] compute_time_delta -> span=? days
+17:13:28 INFO  [correlate] ready_to_decide -> 
+17:13:30 INFO  [route] correlate -> decide (ready_to_decide)
+17:13:30 INFO  [decide] Enter
+17:13:31 INFO  [decide] mark_false_positive() -> 
+17:13:33 INFO  Investigation 29 done | 61.1s | 1 FP + 0 campaign | action=?
+17:13:33 INFO  [select_seeds] Enter | 84 already associated
+17:13:34 INFO  [select_seeds] list_unprocessed_summary -> 
+17:13:35 INFO  [select_seeds] find_similar_cluster -> 
+17:13:37 INFO  [select_seeds] submit_selected_seeds -> 
+17:13:38 INFO  [select_seeds] Selected 1 seeds: n9c0d1e2-f3a
+17:13:38 INFO  ============================================================
+17:13:38 INFO  Investigation 30 | seeds: n9c0d1e2-f3a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:13:38 INFO  [investigate] Enter | loop=0 | seeds=n9c0d1e2-f3a
+17:13:39 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:39 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:42 INFO  [correlate] Enter | loop=1
+17:13:45 INFO  [route] correlate -> investigate (needs more data)
+17:13:45 INFO  [investigate] Enter | loop=1 | seeds=n9c0d1e2-f3a
+17:13:46 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:46 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:49 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:13:50 INFO  [investigate] search_similar_alerts(q='') -> 1 results
+17:13:54 INFO  [correlate] Enter | loop=2
+17:13:58 INFO  [correlate] ready_to_decide -> 
+17:14:00 INFO  [route] correlate -> decide (ready_to_decide)
+17:14:00 INFO  [decide] Enter
+17:14:02 INFO  [decide] mark_false_positive() -> 
+17:14:04 INFO  Investigation 30 done | 25.7s | 1 FP + 0 campaign | action=?
+17:14:04 INFO  [select_seeds] Enter | 85 already associated
+17:14:04 INFO  [select_seeds] list_unprocessed_summary -> 
+17:14:07 INFO  [select_seeds] submit_selected_seeds -> 
+17:14:08 INFO  [select_seeds] Selected 1 seeds: n9a0b1c2-d3e
+17:14:08 INFO  ============================================================
+17:14:08 INFO  Investigation 31 | seeds: n9a0b1c2-d3e | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:14:08 INFO  [investigate] Enter | loop=0 | seeds=n9a0b1c2-d3e
+17:14:09 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:09 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:12 INFO  [correlate] Enter | loop=1
+17:14:15 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:14:18 INFO  [correlate] compute_time_delta -> span=? days
+17:14:19 INFO  [correlate] ready_to_decide -> 
+17:14:20 INFO  [route] correlate -> decide (ready_to_decide)
+17:14:20 INFO  [decide] Enter
+17:14:21 INFO  [decide] mark_false_positive() -> 
+17:14:23 INFO  Investigation 31 done | 14.5s | 1 FP + 0 campaign | action=?
+17:14:23 INFO  [select_seeds] Enter | 86 already associated
+17:14:23 INFO  [select_seeds] list_unprocessed_summary -> 
+17:14:25 INFO  [select_seeds] find_similar_cluster -> 
+17:14:26 INFO  [select_seeds] submit_selected_seeds -> 
+17:14:27 INFO  [select_seeds] Selected 1 seeds: n3e4f5a6-b7c
+17:14:27 INFO  ============================================================
+17:14:27 INFO  Investigation 32 | seeds: n3e4f5a6-b7c | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:14:27 INFO  [investigate] Enter | loop=0 | seeds=n3e4f5a6-b7c
+17:14:28 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:28 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:31 INFO  [correlate] Enter | loop=1
+17:14:33 INFO  [correlate] ready_to_decide -> 
+17:14:34 INFO  [route] correlate -> decide (ready_to_decide)
+17:14:34 INFO  [decide] Enter
+17:14:36 INFO  [decide] mark_false_positive() -> 
+17:14:37 INFO  Investigation 32 done | 10.5s | 1 FP + 0 campaign | action=?
+17:14:37 INFO  [select_seeds] Enter | 87 already associated
+17:14:38 INFO  [select_seeds] list_unprocessed_summary -> 
+17:14:40 INFO  [select_seeds] find_similar_cluster -> 
+17:14:42 INFO  [select_seeds] submit_selected_seeds -> 
+17:14:43 INFO  [select_seeds] Selected 1 seeds: n3c4d5e6-f7a
+17:14:43 INFO  ============================================================
+17:14:43 INFO  Investigation 33 | seeds: n3c4d5e6-f7a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:14:43 INFO  [investigate] Enter | loop=0 | seeds=n3c4d5e6-f7a
+17:14:44 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:44 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:44 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:14:47 INFO  [correlate] Enter | loop=1
+17:14:49 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:14:49 INFO  [correlate] compute_time_delta -> span=? days
+17:14:50 INFO  [correlate] ready_to_decide -> 
+17:14:52 INFO  [route] correlate -> decide (ready_to_decide)
+17:14:52 INFO  [decide] Enter
+17:14:53 INFO  [decide] mark_false_positive() -> 
+17:14:54 INFO  Investigation 33 done | 11.2s | 1 FP + 0 campaign | action=?
+17:14:54 INFO  [select_seeds] Enter | 88 already associated
+17:14:55 INFO  [select_seeds] list_unprocessed_summary -> 
+17:14:56 INFO  [select_seeds] find_similar_cluster -> 
+17:15:00 INFO  [select_seeds] submit_selected_seeds -> 
+17:15:01 INFO  [select_seeds] Selected 1 seeds: c372a57c-016
+17:15:01 INFO  ============================================================
+17:15:01 INFO  Investigation 34 | seeds: c372a57c-016 | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:15:01 INFO  [investigate] Enter | loop=0 | seeds=c372a57c-016
+17:15:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:15:02 INFO  [investigate] search_similar_alerts(q='') -> 2 results
+17:15:05 INFO  [correlate] Enter | loop=1
+17:15:16 INFO  [correlate] compute_time_delta -> span=? days
+17:15:16 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:15:21 INFO  [correlate] ready_to_decide -> 
+17:15:22 INFO  [route] correlate -> decide (ready_to_decide)
+17:15:22 INFO  [decide] Enter
+17:15:24 INFO  [decide] mark_false_positive() -> 
+17:15:25 INFO  Investigation 34 done | 23.5s | 1 FP + 0 campaign | action=?
+17:15:25 INFO  [select_seeds] Enter | 89 already associated
+17:15:25 INFO  [select_seeds] list_unprocessed_summary -> 
+17:15:27 INFO  [select_seeds] find_similar_cluster -> 
+17:15:29 INFO  [select_seeds] submit_selected_seeds -> 
+17:15:29 INFO  [select_seeds] Selected 1 seeds: n1a2b3c4-d5e
+17:15:29 INFO  ============================================================
+17:15:29 INFO  Investigation 35 | seeds: n1a2b3c4-d5e | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:15:29 INFO  [investigate] Enter | loop=0 | seeds=n1a2b3c4-d5e
+17:15:31 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:15:31 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:15:33 INFO  [investigate] search_similar_alerts(q='') -> 1 results
+17:15:34 INFO  [investigate] fetch_campaign_alerts() -> 8 alerts
+17:15:39 INFO  [correlate] Enter | loop=1
+17:15:48 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:15:48 INFO  [correlate] compute_time_delta -> span=? days
+17:15:50 INFO  [correlate] ready_to_decide -> 
+17:15:52 INFO  [route] correlate -> decide (ready_to_decide)
+17:15:52 INFO  [decide] Enter
+17:15:54 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:15:56 INFO  Investigation 35 done | 26.1s | 0 FP + 0 campaign | action=?
+17:15:56 INFO  [select_seeds] Enter | 90 already associated
+17:15:56 INFO  [select_seeds] list_unprocessed_summary -> 
+17:16:01 INFO  [select_seeds] submit_selected_seeds -> 
+17:16:03 INFO  [select_seeds] Selected 1 seeds: n6b7c8d9-e0f
+17:16:03 INFO  ============================================================
+17:16:03 INFO  Investigation 36 | seeds: n6b7c8d9-e0f | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:16:03 INFO  [investigate] Enter | loop=0 | seeds=n6b7c8d9-e0f
+17:16:04 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:16:04 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:16:06 INFO  [investigate] search_similar_alerts(q='') -> 2 results
+17:16:10 INFO  [correlate] Enter | loop=1
+17:16:22 INFO  [correlate] compute_time_delta -> span=? days
+17:16:22 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:16:27 INFO  [correlate] ready_to_decide -> 
+17:16:28 INFO  [route] correlate -> decide (ready_to_decide)
+17:16:28 INFO  [decide] Enter
+17:16:30 INFO  [decide] mark_false_positive() -> 
+17:16:30 INFO  [decide] mark_false_positive() -> 
+17:16:32 INFO  Investigation 36 done | 29.4s | 2 FP + 0 campaign | action=?
+17:16:32 INFO  [select_seeds] Enter | 92 already associated
+17:16:33 INFO  [select_seeds] list_unprocessed_summary -> 
+17:16:36 INFO  [select_seeds] submit_selected_seeds -> 
+17:16:37 INFO  [select_seeds] Selected 1 seeds: 26385fa8-46b
+17:16:37 INFO  ============================================================
+17:16:37 INFO  Investigation 37 | seeds: 26385fa8-46b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:16:37 INFO  [investigate] Enter | loop=0 | seeds=26385fa8-46b
+17:16:38 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:16:38 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:16:41 INFO  [correlate] Enter | loop=1
+17:16:44 INFO  [correlate] ready_to_decide -> 
+17:16:46 INFO  [route] correlate -> decide (ready_to_decide)
+17:16:46 INFO  [decide] Enter
+17:16:47 INFO  [decide] mark_false_positive() -> 
+17:16:48 INFO  Investigation 37 done | 11.4s | 1 FP + 0 campaign | action=?
+17:16:48 INFO  [select_seeds] Enter | 93 already associated
+17:16:49 INFO  [select_seeds] list_unprocessed_summary -> 
+17:16:57 INFO  [select_seeds] submit_selected_seeds -> 
+17:16:58 INFO  [select_seeds] Selected 1 seeds: n3c4d5e6-f7a
+17:16:58 INFO  ============================================================
+17:16:58 INFO  Investigation 38 | seeds: n3c4d5e6-f7a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:16:58 INFO  [investigate] Enter | loop=0 | seeds=n3c4d5e6-f7a
+17:17:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:17:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:17:00 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 2 results
+17:17:02 INFO  [investigate] search_similar_alerts(q='') -> 2 results
+17:17:22 INFO  [correlate] Enter | loop=1
+17:17:26 INFO  [correlate] compute_time_delta -> span=? days
+17:17:26 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:17:29 INFO  [correlate] ready_to_decide -> 
+17:17:30 INFO  [route] correlate -> decide (ready_to_decide)
+17:17:30 INFO  [decide] Enter
+17:17:34 INFO  [decide] add_alerts_to_campaign(, 0 alerts) -> 
+17:17:34 INFO  [decide] create_campaign(0 alerts) -> 
+17:17:36 INFO  [decide] create_campaign(0 alerts) -> 
+17:17:38 INFO  Investigation 38 done | 39.3s | 0 FP + 4 campaign | action=?
+17:17:38 INFO  [select_seeds] Enter | 95 already associated
+17:17:38 INFO  [select_seeds] list_unprocessed_summary -> 
+17:17:41 INFO  [select_seeds] submit_selected_seeds -> 
+17:17:43 INFO  [select_seeds] Selected 1 seeds: n4f5a6b7-c8d
+17:17:43 INFO  ============================================================
+17:17:43 INFO  Investigation 39 | seeds: n4f5a6b7-c8d | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:17:43 INFO  [investigate] Enter | loop=0 | seeds=n4f5a6b7-c8d
+17:17:44 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:17:44 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:17:47 INFO  [correlate] Enter | loop=1
+17:17:50 INFO  [correlate] fetch_campaign_alerts() -> 9 alerts
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:01 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:18:05 INFO  [correlate] ready_to_decide -> 
+17:18:07 INFO  [route] correlate -> decide (ready_to_decide)
+17:18:07 INFO  [decide] Enter
+17:18:09 INFO  [decide] mark_false_positive() -> 
+17:18:10 INFO  Investigation 39 done | 27.4s | 1 FP + 0 campaign | action=?
+17:18:10 INFO  [select_seeds] Enter | 96 already associated
+17:18:11 INFO  [select_seeds] list_unprocessed_summary -> 
+17:18:12 INFO  [select_seeds] submit_selected_seeds -> 
+17:18:14 INFO  [select_seeds] Selected 1 seeds: n0d1e2f3-a4b
+17:18:14 INFO  ============================================================
+17:18:14 INFO  Investigation 40 | seeds: n0d1e2f3-a4b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:18:14 INFO  [investigate] Enter | loop=0 | seeds=n0d1e2f3-a4b
+17:18:15 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:18:16 INFO  [correlate] Enter | loop=1
+17:18:19 INFO  [route] correlate -> investigate (needs more data)
+17:18:19 INFO  [investigate] Enter | loop=1 | seeds=n0d1e2f3-a4b
+17:18:22 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:18:22 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:18:22 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:18:22 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:18:24 INFO  [investigate] search_similar_alerts(q='') -> 1 results
+17:18:28 INFO  [correlate] Enter | loop=2
+17:18:33 INFO  [correlate] ready_to_decide -> 
+17:18:34 INFO  [route] correlate -> decide (ready_to_decide)
+17:18:34 INFO  [decide] Enter
+17:18:35 INFO  [decide] mark_false_positive() -> 
+17:18:36 INFO  Investigation 40 done | 22.8s | 1 FP + 0 campaign | action=?
+17:18:36 INFO  [select_seeds] Enter | 97 already associated
+17:18:37 INFO  [select_seeds] list_unprocessed_summary -> 
+17:18:44 INFO  [select_seeds] submit_selected_seeds -> 
+17:18:45 INFO  [select_seeds] Selected 1 seeds: n9e0f1a2-b3c
+17:18:45 INFO  ============================================================
+17:18:45 INFO  Investigation 41 | seeds: n9e0f1a2-b3c | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:18:45 INFO  [investigate] Enter | loop=0 | seeds=n9e0f1a2-b3c
+17:18:47 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:18:47 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:18:49 INFO  [correlate] Enter | loop=1
+17:18:52 INFO  [correlate] ready_to_decide -> 
+17:18:53 INFO  [route] correlate -> decide (ready_to_decide)
+17:18:53 INFO  [decide] Enter
+17:18:56 INFO  [decide] mark_false_positive() -> 
+17:18:57 INFO  Investigation 41 done | 12.0s | 1 FP + 0 campaign | action=?
+17:18:57 INFO  [select_seeds] Enter | 98 already associated
+17:18:58 INFO  [select_seeds] list_unprocessed_summary -> 
+17:19:01 INFO  [select_seeds] submit_selected_seeds -> 
+17:19:01 INFO  [select_seeds] Selected 1 seeds: 3cb970a5-0dc
+17:19:01 INFO  ============================================================
+17:19:01 INFO  Investigation 42 | seeds: 3cb970a5-0dc | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:19:01 INFO  [investigate] Enter | loop=0 | seeds=3cb970a5-0dc
+17:19:02 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:19:08 INFO  [correlate] Enter | loop=1
+17:19:10 INFO  [correlate] compute_time_delta -> span=? days
+17:19:10 INFO  [correlate] validate_shared_entities -> 0 shared entities
+17:19:11 INFO  [correlate] ready_to_decide -> 
+17:19:12 INFO  [route] correlate -> decide (ready_to_decide)
+17:19:12 INFO  [decide] Enter
+17:19:19 INFO  [decide] mark_false_positive() -> 
+17:19:20 INFO  Investigation 42 done | 18.4s | 1 FP + 0 campaign | action=?
+17:19:20 INFO  [select_seeds] Enter | 99 already associated
+17:19:20 INFO  [select_seeds] list_unprocessed_summary -> 
+17:19:27 INFO  [select_seeds] submit_selected_seeds -> 
+17:19:28 INFO  [select_seeds] Selected 1 seeds: n8d9e0f1-a2b
+17:19:28 INFO  ============================================================
+17:19:28 INFO  Investigation 43 | seeds: n8d9e0f1-a2b | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:19:28 INFO  [investigate] Enter | loop=0 | seeds=n8d9e0f1-a2b
+17:19:29 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:19:29 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:19:32 INFO  [correlate] Enter | loop=1
+17:19:36 INFO  [correlate] ready_to_decide -> 
+17:19:38 INFO  [route] correlate -> decide (ready_to_decide)
+17:19:38 INFO  [decide] Enter
+17:19:40 INFO  [decide] mark_false_positive() -> 
+17:19:41 INFO  Investigation 43 done | 13.3s | 1 FP + 0 campaign | action=?
+17:19:41 INFO  [select_seeds] Enter | 100 already associated
+17:19:41 INFO  [select_seeds] list_unprocessed_summary -> 
+17:19:45 INFO  [select_seeds] submit_selected_seeds -> 
+17:19:46 INFO  [select_seeds] Selected 1 seeds: n1c2d3e4-f5a
+17:19:46 INFO  ============================================================
+17:19:46 INFO  Investigation 44 | seeds: n1c2d3e4-f5a | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:19:46 INFO  [investigate] Enter | loop=0 | seeds=n1c2d3e4-f5a
+17:19:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:19:48 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:19:50 INFO  [correlate] Enter | loop=1
+17:19:53 INFO  [route] correlate -> investigate (needs more data)
+17:19:53 INFO  [investigate] Enter | loop=1 | seeds=n1c2d3e4-f5a
+17:19:54 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:19:54 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:19:54 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:19:55 INFO  [correlate] Enter | loop=2
+17:20:01 INFO  [correlate] ready_to_decide -> 
+17:20:02 INFO  [route] correlate -> decide (ready_to_decide)
+17:20:02 INFO  [decide] Enter
+17:20:11 INFO  [decide] mark_false_positive() -> 
+17:20:12 INFO  Investigation 44 done | 25.8s | 1 FP + 0 campaign | action=?
+17:20:12 INFO  [select_seeds] Enter | 101 already associated
+17:20:13 INFO  [select_seeds] list_unprocessed_summary -> 
+17:20:14 INFO  [select_seeds] submit_selected_seeds -> 
+17:20:15 INFO  [select_seeds] Selected 1 seeds: n1e2f3a4-b5c
+17:20:15 INFO  ============================================================
+17:20:15 INFO  Investigation 45 | seeds: n1e2f3a4-b5c | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
+17:20:15 INFO  [investigate] Enter | loop=0 | seeds=n1e2f3a4-b5c
+17:20:16 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:20:19 INFO  [correlate] Enter | loop=1
+17:20:22 INFO  [route] correlate -> investigate (needs more data)
+17:20:22 INFO  [investigate] Enter | loop=1 | seeds=n1e2f3a4-b5c
+17:20:24 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:20:24 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:20:24 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 1 results
+17:20:26 INFO  [investigate] search_similar_alerts(q='') -> 1 results
+17:20:27 INFO  [investigate] fetch_campaign_alerts() -> 2 alerts
+17:20:28 INFO  [investigate] search_alerts_by_entity(type=?, value=?) -> 0 results
+17:20:31 INFO  [correlate] Enter | loop=2
+17:20:41 INFO  [correlate] ready_to_decide -> 
+17:20:42 INFO  [route] correlate -> decide (ready_to_decide)
+17:20:42 INFO  [decide] Enter
+17:20:43 INFO  [decide] mark_false_positive() -> 
+17:20:50 INFO  Investigation 45 done | 34.7s | 1 FP + 0 campaign | action=?
+17:20:50 INFO  [select_seeds] Enter | 102 already associated
+17:20:51 INFO  [select_seeds] list_unprocessed_summary -> 
+17:20:51 WARNING [select_seeds] LLM did not call submit_selected_seeds
+17:20:51 INFO  ============================================================
+17:20:51 INFO  Total execution time: 1745.7s (29m 05s) | 45 investigations | run_id=round2_no_ioc-gpt-4.1-mini-20260516T1951
