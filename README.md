@@ -446,7 +446,7 @@ See `input/schema.md` for the full alert schema and per-round changelog.
 | `input/` | Alert datasets per round |
 | `output/` | Agent logs and evaluation reports |
 | `talks/` | Conference slides (YSTS SP 2026, FIRST Denver 2026) |
-| `wazuh-helm/` | Helm chart for the Wazuh stack used as the research SOC environment |
+
 
 **Dependency direction:** `scripts/ → app/experiments/ → app/ingestion/`, with `app/utils/` callable from anywhere.
 
