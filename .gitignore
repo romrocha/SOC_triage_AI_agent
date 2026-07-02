@@ -1,4 +1,4 @@
-#ai agents files
+# AI agent files
 thehive_mockup_alerts/
 .DS_Store
 .claude/
@@ -12,3 +12,15 @@ __pycache__/
 *$py.class
 .pytest_cache/
 *.egg-info/
+.ipynb_checkpoints/
+
+# Local databases and vector store (generated at runtime)
+*.db
+*.db-shm
+*.db-wal
+data/chroma_db/
+
+# Dataset backups (local only)
+backup/
+bkp/
+input/backup/
